@@ -46,9 +46,26 @@ layout: default
 clicks: 6
 ---
 
-# Multi-agent decision-making tasks are games 
+# Think of decision-making as games and agents
 
 <div class="grid grid-cols-3 gap-8 w-full mt-2 items-start">
+
+  <!-- Top gradient: increasing left -> right -->
+  <div class="absolute top-20 left-0 w-full h-8 pointer-events-none z-0">
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-300 to-gray-600 opacity-40 clip-agent-top"></div>
+    <div class="absolute right-2 -top-10 text-2xl font-medium">
+      Agent complexity
+    </div>
+  </div>
+
+  <!-- Bottom gradient: decreasing left -> right -->
+  <div class="absolute top-60 left-0 w-full h-8 pointer-events-none z-0">
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-600 via-gray-300 to-gray-100 opacity-70 clip-agent-bottom"></div>
+    <div class="absolute left-2 top-0 text-2xl font-medium">
+      Experimental control
+    </div>
+  </div>
+
 
   <!-- Column 1 -->
   <div class="flex flex-col items-center text-center">
@@ -90,6 +107,14 @@ clicks: 6
     src="/chaofei-head.png"
     class="w-14 h-14 rounded-full object-cover border border-gray-300"
   />
+   <img
+    src="/jingjie-head.png"
+    class="w-14 h-14 rounded-full object-cover border border-gray-300"
+  />
+  <img
+    src="/nikos-head.jpg"
+    class="w-14 h-14 rounded-full object-cover border border-gray-300"
+  />
   </div>
 
   Gauld* &amp; Bao* et al. 2026<br>
@@ -106,19 +131,19 @@ clicks: 6
   <div class="flex flex-col items-center text-center">
 
   <template v-if="$clicks >= 5">
-    <div class="text-2xl font-semibold mb-4 ">
+    <div class="text-2xl font-semibold mb-4">
       Rock paper scissors
     </div>
     <img
       src="/mouse-rock-paper-scissors.png"
-      class="w-full max-w-[85%] object-contain"
+      class="w-full max-w-[85%] object-contain -mt-5"
     />
   </template>
   <div
       v-if="$clicks >= 6"
       class="mt-0 text-sm italic leading-snug max-w-[90%]"
     >
-  <div class="flex items-center justify-center gap-4 mb-3 mt-4">
+  <div class="flex items-center justify-center gap-4 mb-3 mt-20">
     <img
       src="/joanna-head.png"
       class="w-14 h-14 rounded-full object-cover border border-gray-300"
@@ -140,7 +165,7 @@ clicks: 6
       </div>
       <img
         src="/mouse-racing-towards-a-cheese.png"
-        class="w-full max-w-[85%] object-contain"
+        class="w-full max-w-[85%] object-contain -mt-5"
       />
     </template>
     <div
@@ -150,17 +175,23 @@ clicks: 6
     <div class="flex items-center justify-center gap-4 mb-3 mt-4">
     <img
       src="/octagon-task-schematic.png"
-      class="w-full max-w-[50%] object-contain mb-4 -mt-5"
+      class="w-full max-w-[50%] object-contain mb-4 mt-0"
     />
-    <img
-      src="/mehul-head.png"
-      class="w-14 h-14 rounded-full object-cover border border-gray-300"
-    /> 
-    <img
-      src="/ivana-head.jpg"
-      class="w-14 h-14 rounded-full object-cover border border-gray-300"
-    />
+  <!-- Headshots in 3 rows -->
+  <div class="grid grid-cols-2 gap-3 justify-items-center -mt-10 relative z-10">
+    <img src="/mehul-head.png" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
+    <img src="/ivana-head.jpg" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
+
+  <img src="/chris-head.png" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
+  <img src="/orsi-head.png" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
+
+  <!-- Last row (centered single image) -->
+  <div class="col-span-2 flex justify-center">
+    <img src="/roshni-head.jpg" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
   </div>
+  </div>
+  </div>
+  
 
   Erlich, Ristogi ... Orsolic et al. 2026<br>
   <span class="not-italic">
@@ -176,175 +207,116 @@ clicks: 6
 ---
 transition: fade
 layout: default
+clicks: 6
 ---
 
 # Rock paper scissors as a way of studying strategic stochasticity
 
+<div class="relative w-full h-[560px] mt-1">
 
-
----
-transition: fade
-layout: default
----
-
-# Two ways of studying multi-agent behaviour
-
-
-
-<div class="grid grid-cols-2 gap-6 mt-30 w-full items-start">
-
-<!-- Column 1 -->
-<div v-click="1" class="flex flex-col items-center text-center gap-0">
-  
-  <div class="text-2xl font-semibold leading-snug max-w-xs">
-    Animal vs Computer
+  <!-- STEP 3: interim title -->
+  <div
+    v-if="$clicks >= 3"
+    class="absolute top-0 left-15% -translate-x-1/2 text-xl font-semibold text-center transition-all duration-700"
+  >
+    Rock paper scissors requires <br> strategic stochasticity
   </div>
 
-  <img
-    src="/animal-experimenter-interaction-v2.svg"
-    class="h-80 object-contain rounded-lg -mt-20"
-  />
-</div>
-
-<!-- Column 2 -->
-<div v-click="1" class="flex flex-col items-center text-center gap-0">
-  
-  <div class="text-2xl font-semibold leading-snug max-w-xs">
-    Animal vs Animal
+  <!-- STEP 4+: final heading for columns -->
+  <div
+    v-if="$clicks >= 4"
+    class="absolute top-0 left-[38%] w-[58%] -mt-10 text-center text-xl font-semibold transition-all duration-700"
+  >
+    Strategic stochasticity exists in <br> nature and across species
   </div>
 
+  <!-- LEFT / CENTRE cartoon block -->
+  <div
+    class="absolute transition-all duration-700"
+    :class="$clicks < 3
+      ? 'top-[60px] left-1/2 -translate-x-1/2 w-[42%]'
+      : 'top-[90px] left-[2%] w-[28%]'"
+  >
+    <!-- First cartoon -->
+    <div
+      v-if="$clicks === 1"
+      class="flex flex-col items-center text-center"
+    >
+      <img
+        src="/mouse-thinking-mouse.png"
+        class="w-full max-w-[280px] object-contain"
+      />
+      <div class="mt-4 text-lg italic text-gray-700 max-w-md">
+        “I need to predict what the opponent will play next.”
+      </div>
+    </div>
+
+  <!-- Second cartoon -->
+  <div
+    v-if="$clicks >= 2"
+    class="flex flex-col items-center text-center"
+  >
+    <img
+      src="/mouse-thinking-mouse-thinking-mouse.png"
+      class="w-full max-w-[280px] object-contain"
+    />
+    <div class="mt-4 text-lg italic text-gray-700 max-w-md">
+      “My opponent is predicting my next move, I should randomise to be unpredictable.”
+    </div>
+  </div>
+  </div>
+
+  <!-- MIDDLE COLUMN -->
+  <div
+    v-if="$clicks >= 5"
+    class="absolute top-[25px] left-[38%] w-[26%] flex flex-col items-center text-center transition-all duration-700"
+  >
+    <div class="text-sm font-semibold leading-snug max-w-xs mb-3">
+      Random escape trajectories in prey animals
+    </div>
+
   <img
-    src="/animal-animal-interaction-v2.svg"
-    class="h-80 object-contain rounded-lg -mt-20"
-  />
-</div>
-
-<!-- Glow highlight -->
-<div
-  v-click="3"
-  class="pointer-events-none absolute left-[5%] top-[15%] w-[45%] h-[75%] rounded-full"
-  style="
-    box-shadow:
-      0 0 0 4px rgba(255, 100, 100, 0.4),
-      0 0 40px rgba(255, 100, 100, 0.25);
-  "
-></div>
-
-
-</div>
-
-
----
-transition: fade
-layout: default
----
-
-# Strategic stochasticity intro?
-
-<div class="flex flex-col items-center justify-center text-center gap-0">
-
-  <!-- Image appears second -->
-  <img 
-    v-click="1"
-    src="/driver-and-humphries-1970.png" 
-    class="w-[35%] object-contain  ml-70"
+    src="/driver-and-humphries-1970.png"
+    class="w-full max-w-[100%] object-contain rounded-lg"
   />
 
-  <!-- Quote appears first -->
-  <div v-click="2" class="max-w-3xl text-lg italic leading-relaxed">
-    “Protean behaviour is defined as that behaviour which is sufficiently unsystematic 
-    to prevent a reactor predicting in detail the position or actions of the actor.”
-    <br/>
-    <span class="text-sm not-italic opacity-70">
-      Michael Chance(1959), Humphries & Driver (1970)
+  <div class="text-xs leading-snug italic max-w-xs mt-3">
+    Humphries and Driver 1970<br>
+    <span class="not-italic">
+      Protean defence by prey animals
     </span>
   </div>
-
-
-
-</div>
-
-
----
-transition: fade
-layout: default
----
-
-# Multiple species exhibit strategic stochasticity
-
-<div class="grid grid-cols-3 gap-6 w-full items-start">
-
-<!-- Column 1 -->
-<div v-click="1" class="flex flex-col items-center text-center gap-0">
-  
-  <div class="text-sm font-semibold leading-snug max-w-xs">
-    Fish increase path complexity after being poked
   </div>
 
-  <img
-    src="/pacific-blue-eye.jpg"
-    class="h-40 object-contain rounded-lg"
-  />
-  <img
-    src="/blue-eye-fish-entropy.png"
-    class="h-40 object-contain rounded-lg"
-  />
-  <div class="text-xs leading-snug italic max-w-xs">
+  <!-- RIGHT COLUMN -->
+  <div
+    v-if="$clicks >= 6"
+    class="absolute top-[25px] right-[2%] w-[26%] flex flex-col items-center text-center transition-all duration-700"
+  >
+    <div class="text-sm font-semibold leading-snug max-w-xs mb-3">
+      Fish increase path complexity after being poked
+    </div>
+
+  <div class="flex flex-col items-center gap-3">
+    <img
+      src="/pacific-blue-eye.jpg"
+      class="h-32 object-contain rounded-lg"
+    />
+    <img
+      src="/blue-eye-fish-entropy.png"
+      class="h-32 object-contain rounded-lg"
+    />
+  </div>
+
+  <div class="text-xs leading-snug italic max-w-xs mt-3">
     Herbert-Read et al. 2015<br>
     <span class="not-italic">
       Escape path complexity and its context dependency in Pacific blue-eyes
     </span>
   </div>
-</div>
-
-<!-- Column 2 -->
-<div v-click="2" class="flex flex-col items-center text-center gap-0">
-  
-  <div class="text-sm font-semibold leading-snug max-w-xs">
-    Male bird absence duration becomes more unpredictable as their mate approach fertile periods
   </div>
 
-  <img
-    src="/kittiwake_adult.jpg"
-    class="h-40 object-cover object-top rounded-lg mt--5"
-  />
-  <img
-    src="/richard-wagner-2004.png"
-    class="h-40 object-contain rounded-lg"
-  />
-  <div class="text-xs leading-snug italic max-w-xs">
-    Richard Wagner et al. 2004<br>
-    <span class="not-italic">
-      Is Male Unpredictability a Paternity Assurance Strategy?
-    </span>
-  </div>
 </div>
-
-<!-- Column 3 -->
-<div v-click="3" class="flex flex-col items-center text-center gap-0">
-  
-  <div class="text-sm font-semibold leading-snug max-w-xs">
-    Humans can learn to draw random rectangles based on feedback alone
-  </div>
-
-  <img
-    src="/mondrian.jpg"
-    class="h-40 object-contain rounded-lg"
-  />
-  <img
-    src="/ross-and-neuringer-2001.png"
-    class="h-40 object-contain rounded-lg"
-  />
-  <div class="text-xs leading-snug italic max-w-xs">
-    Ross and Neuringer 2002<br>
-    <span class="not-italic">
-      Reinforcement of variations and repetitions along three independent response dimensions
-    </span>
-  </div>
-</div>
-
-</div>
-
 
 ---
 transition: fade
@@ -353,7 +325,7 @@ layout: two-cols-title
 
 :: title :: 
 
-# Studying strategic stochasticity using matching pennies
+# Matching pennies:  a simplified game of rock paper scissors
 
 :: left :: 
 
@@ -384,11 +356,11 @@ layout: two-cols-title
   </v-click>
 
   <v-click at="2">
-    <div class="ml-4">- Simultaneous binary choice</div>
+    <div class="ml-4">• Simultaneous binary choice</div>
   </v-click>
 
   <v-click at="3">
-    <div class="ml-4">- Matcher wins if same, unmatcher wins if different</div>
+    <div class="ml-4">• <b>Matcher</b> wins if same, unmatcher wins if different</div>
   </v-click>
 
   <v-click at="6">
@@ -396,11 +368,11 @@ layout: two-cols-title
   </v-click>
 
   <v-click at="7">
-    <div class="ml-4">- Exploit predictable opponents</div>
+    <div class="ml-4">• Exploit predictable opponents</div>
   </v-click>
 
   <v-click at="8">
-    <div class="ml-4">- Be unpredictable to avoid exploitation</div>
+    <div class="ml-4">• Be unpredictable to avoid exploitation</div>
   </v-click>
 
   <v-click at="9">
@@ -408,15 +380,15 @@ layout: two-cols-title
   </v-click>
 
   <v-click at="10">
-    <div class="ml-4">- Nash equilibrium: both players randomise 50/50</div>
+    <div class="ml-4">• Nash equilibrium: both players randomise 50/50</div>
   </v-click>
 
   <v-click at="11">
-    <div class="ml-4">- A player learns to exploit an opponent</div>
+    <div class="ml-4">• A player learns to exploit an opponent</div>
   </v-click>
 
   <v-click at="12">
-    <div class="ml-4">- A player learns randomness under competition from a predictive opponent</div>
+    <div class="ml-4">• A player learns randomness under competition from a predictive opponent</div>
   </v-click>
 
 </div>
@@ -483,11 +455,11 @@ clicks: 5
 
 ---
 transition: fade
-layout: default 
+layout: default
 ---
 
+# Matching pennies experiments across species
 
-# Matching pennies experiments
 
 
 <div class="relative w-full h-[760px]">
@@ -495,8 +467,8 @@ layout: default
 <!-- Monkey image -->
 <img
   v-click="1"
-  src="/monkey-algorithms-cartoon-v2.svg"
-  class="absolute left-55% -translate-x-1/2 transition-all duration-700"
+  src="/monkey-algorithms-cartoon-v3.svg"
+  class="absolute left-55% -translate-x-1/2 transition-all duration-700 -mt-10"
   :style="$clicks >= 5
     ? 'top: 0rem; width: 55%;'
     : 'top: 1.5rem; width: 80%;'"
@@ -505,7 +477,7 @@ layout: default
 <!-- Bullet list -->
 <div
   v-if="$clicks >= 2 && $clicks < 5"
-  class="absolute left-1/2 top-[250px] -translate-x-1/2 w-[80%]"
+  class="absolute left-1/2 top-[200px] -translate-x-1/2 w-[80%]"
 >
 <ul class="list-disc text-left pl-6 space-y-5">
 
@@ -528,17 +500,72 @@ layout: default
 <img
   v-click="6"
   src="/mouse-against-algorithm-2-v2.svg"
-  class="absolute left-54% top-20% w-[32%]"
+  class="absolute left-54% top-16% w-[32%]"
 />
+
+<!-- Mouse justification -->
+<div
+  v-if="$clicks >= 6"
+  class="absolute left-[15%] top-[25%] -translate-y-1/2 w-[35%]"
+>
+  <div class="px-4 py-3 rounded-lg bg-white/70 backdrop-blur-md shadow-md">
+    <div class="text-base font-semibold mb-2">
+      Why study mice?
+    </div>
+    <ul class="list-disc pl-5 space-y-1 text-sm">
+      <li>Higher throughput experiments</li>
+      <li>Simultaneous large-scale neural recordings</li>
+      <li>Genetic and circuit manipulation tools</li>
+    </ul>
+  </div>
+</div>
 
 <!-- Human image -->
 <img
   v-click="7"
   src="/human-vs-algorithm-2-v2.svg"
-  class="absolute left-54% top-40% w-[32%]"
+  class="absolute left-54% top-37% w-[32%]"
 />
 
+<!-- Human justification -->
+<div
+  v-if="$clicks >= 7"
+  class="absolute left-[15%] top-[50%] -translate-y-1/2 w-[35%]"
+>
+  <div class="px-4 py-3 rounded-lg bg-white/70 backdrop-blur-md shadow-md">
+    <div class="text-base font-semibold mb-2">
+      Why study humans?
+    </div>
+    <ul class="list-disc pl-5 space-y-1 text-sm">
+      <li>Higher throughput</li>
+      <li>More flexible, sophisticated strategies</li>
+    </ul>
+  </div>
 </div>
+
+
+
+</div>
+
+
+<!-- Daeyeol Lee headshot + citation -->
+<div
+  v-if="$clicks >= 1 && $clicks < 5"
+  class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+>
+<!-- Circular image -->
+<img
+  src="/daeyeol-lee.jpg"
+  class="w-16 h-16 rounded-full object-cover border border-gray-300 shadow-md -ml-125"
+/>
+
+<!-- Citation -->
+<div class="text-xs text-center -mt-10 max-w-md leading-snug opacity-80">
+  <i>Lee et al., 2004. </i> Reinforcement learning and decision making in monkeys during a competitive game. <i>Cognitive Brain Research</i> 
+</div>
+
+</div>
+
 
 
 
@@ -571,12 +598,17 @@ columns: is-5
 <img src="/p_state_4_states.svg" class="opacity-100 w-[100%]" v-click="3"/>
 
 
-<div v-click="1" class="absolute bottom-40 left-12 w-[35%] text-sm opacity-75">
-  <hr class="border-t border-gray-600 opacity-0 mb-2" />
-  
-  > Ashwood et al 2022: Mice alternate between discrete strategies during perceptual decision-making (Nat Neuro.)
-</div>
+<div v-click="1" class="absolute bottom-10 left-12 w-[36%] text-sm opacity-75 leading-snug">
+  <hr class="border-t border-gray-600 opacity-20 mb-2" />
 
+  <div>
+    <i>Ashwood et al. 2022. </i>Mice alternate between discrete strategies during perceptual decision-making. <i>Nature Neuroscience </i>
+  </div>
+
+  <div class="mt-2">
+    <i> Bolkan  et al. 2022. </i> Opponent control of behaviour by dorsomedial striatal pathways depends on task demands and internal state. <i>Nature Neuroscience </i>
+  </div>
+</div>
 
 
 ---
@@ -585,14 +617,14 @@ layout: default
 clicks: 5
 ---
 
-# Monkeys adapt their strategy to the competitive pressure of the opponent
+# Monkeys adapt their strategy to the competitive pressure from their opponent
 
 <div class="w-full flex justify-center">
   <div class="relative w-full h-[760px] overflow-hidden">
 
   <!-- Cartoon -->
   <img
-    src="/monkey-algorithms-cartoon-v2.svg"
+    src="/monkey-algorithms-cartoon-v3.svg"
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
     :style="$clicks === 1
       ? 'top: 90px; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
@@ -763,13 +795,16 @@ clicks: 4
 
 ---
 transition: fade
+layout: side-title
 clicks: 4
 ---
 
+:: title ::
+
 # Interim summary 
 
-
-<div class="mt-30">
+:: content :: 
+<div class="mt-25">
 
 <v-clicks>
 
@@ -886,44 +921,44 @@ clicks: 5
 
 :: content :: 
 
-<div class="space-y-6 mt-2">
+<div class="space-y-6 mt-4">
 
-  <v-click>
-
-  <div :class="$clicks >= 4 ? 'opacity-100' : ''">
-    <div 
-      class="text-lg transition-all duration-500"
-    >
-      1. What are the behavioural strategies used by mice in a game of matching pennies against a competitive opponent with a stationary strategy? How does it differ between humans and monkeys?
-    </div>
-    <div class="text-sm italic mt-1 ml-4 transition-all duration-500"
-         :class="$clicks >= 4 ? 'opacity-90' : 'opacity-70'">
-      Aloor, Sit et al. *Strategic stochasticity in mice and monkeys* (in prep)
-    </div>
+  <!-- Question -->
+  <div v-click class="space-y-1">
+    <div class="text-lg">
+    1. What behavioural strategies do mice use in matching pennies against a competitive but stationary opponent?
+    <br>
+    How does this compare to humans and monkeys?
   </div>
 
-  </v-click>
-
-  <v-clicks>
-
-  - Mouse alternate between bias and stochastic states, increasing the proportion of stochastic states over learning
-  - Monkeys are better able to maintain stochastic states from start to end of a session
-  - Humans start with a win-stay strategy followed by win-switch and other strategies
-
-  </v-clicks>
-
-  <v-click>
-
-  <div :class="$clicks >= 5 ? 'opacity-100' : ''">
-    <div class="text-lg font-bold transition-all duration-500">
-      Do mice change their strategy when playing against another mouse, where the strategies of the opponent is no longer stationary?
-    </div>
+  <div class="text-sm italic text-gray-500 ml-2">
+    Aloor, Sit et al. — <span class="italic">in preparation</span>
+  </div>
   </div>
 
-  </v-click>
+  <!-- Bullet points -->
+  <div class="mt-4 space-y-3 text-lg">
+  <div v-click>
+    • Mice alternate between bias and stochastic states, increasing stochasticity with learning
+  </div>
 
+  <div v-click>
+    • Monkeys maintain stochastic strategies consistently throughout sessions
+  </div>
+
+  <div v-click>
+    • Humans begin with win-stay, then transition to more mixed strategies
+  </div>
 </div>
 
+  <!-- Final transition question -->
+  <div v-click class="mt-8 text-xl font-semibold text-center">
+    Do mice change their strategy when playing against another mouse,
+    <br>
+    where the opponent is no longer stationary?
+  </div>
+
+</div>
 
 
 
@@ -1009,7 +1044,7 @@ layout: default
   id="myvid"
   src="/example_multiplayer_synced_video.mp4"
   controls
-  class="w-1/2 mx-auto -mt-5"
+  class="w-100% mx-auto mt-20"
 />
 
 <script setup>
@@ -1018,7 +1053,11 @@ import { onMounted } from 'vue'
 onMounted(() => {
   const vid = document.getElementById('myvid')
   if (vid) {
-    vid.playbackRate = 2.0   // 0.5 = half speed, 2.0 = double speed
+    vid.playbackRate = 1.0
+
+    vid.addEventListener('ended', () => {
+      vid.removeAttribute('controls')   // hide controls
+    })
   }
 })
 </script>
@@ -1122,8 +1161,8 @@ layout: default
   <!-- Bottom left (Click 2) -->
   <img
     v-click="2"
-    src="/human_solo_vs_social_entropy_mp_vs_mp_sessions.svg"
-    class="absolute left-[20%] bottom-[55%] w-[32%] object-contain"
+    src="/human_solo_vs_social_entropy_line_plot.svg"
+    class="absolute left-[25%] bottom-[53%] w-[25%] object-contain"
   />
 
   <!-- Bottom right (Click 3) -->
@@ -1276,7 +1315,7 @@ clicks: 7
 
   <div
     v-if="$clicks >= 7"
-    class="absolute right-[2%] top-[20%] w-[30%] bg-amber-50 border border-amber-200 rounded-2xl shadow-xl p-5 rotate-[1deg]"
+    class="absolute right-[2%] top-[10%] w-[30%] bg-amber-50 border border-amber-200 rounded-2xl shadow-xl p-5 rotate-[1deg]"
   >
     <div class="text-lg font-semibold mb-2">
       Other plans
@@ -1284,6 +1323,7 @@ clicks: 7
     <ul class="list-disc ml-5 text-sm space-y-2">
       <li>simultaneous neuropixel recordings whilst mice play against each other</li>
       <li>modifications of the payoff matrix</li>
+      <li>cross-species gameplay!</li>
     </ul>
   </div>
 
@@ -1302,7 +1342,7 @@ transition: fade
 
 :: content ::
 
-<div style="transform: translateY(6vh)">
+<div style="transform: translateY(3vh)">
 
 <v-clicks :every="2">
 
@@ -1345,19 +1385,19 @@ class: p-0 m-0
   </div>
 
 <!-- Joanna -->
-<div class="absolute bottom-70 right-10">
+<div class="absolute bottom-70 right-40">
   <div class="px-5 py-2 rounded-lg bg-black/25 backdrop-blur-sm">
-    <h2 class="text-lg font-semibold text-white/100">
-      Joanna: Mouse MP
+    <h2 class="text-lg font-semibold text-white/100 text-center">
+      Joanna <br>Mouse MP
     </h2>
   </div>
 </div>
 
 <!-- Mehul -->
-<div class="absolute bottom-30 left-60">
+<div class="absolute bottom-30 left-65">
   <div class="px-5 py-2 rounded-lg bg-black/25 backdrop-blur-sm">
-    <h2 class="text-lg font-semibold text-white/100">
-      Mehul: Mouse vs Mouse
+    <h2 class="text-lg font-semibold text-white/100 text-center">
+      Mehul <br> Mouse vs Mouse
     </h2>
   </div>
 </div>
