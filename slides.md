@@ -1191,14 +1191,14 @@ layout: default
   <img
     v-click="2"
     src="/human_solo_vs_social_entropy_line_plot.svg"
-    class="absolute left-[25%] bottom-[53%] w-[25%] object-contain"
+    class="absolute left-[25%] bottom-[43%] w-[25%] object-contain"
   />
 
   <!-- Bottom right (Click 3) -->
   <img
     v-click="3"
     src="/human_solo_vs_social_reward_mp_vs_mp_sessions.svg"
-    class="absolute right-[20%] bottom-[54.4%] w-[31%] object-contain"
+    class="absolute right-[20%] bottom-[43.4%] w-[31%] object-contain"
   />
 
   </div>
