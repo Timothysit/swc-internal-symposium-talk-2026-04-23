@@ -1044,7 +1044,7 @@ layout: default
   id="myvid"
   src="/example_multiplayer_synced_video.mp4"
   controls
-  class="w-100% mx-auto mt-20"
+  class="w-80% mx-auto -mt-5"
 />
 
 <script setup>
@@ -1061,6 +1061,35 @@ onMounted(() => {
   }
 })
 </script>
+
+<!-- Acknowledgement (bottom-left) -->
+<div class="absolute bottom-6 left-6">
+  <div class="bg-white px-4 py-2 rounded-lg shadow-md flex items-center gap-6">
+
+  <!-- Mehul -->
+  <div class="flex items-center gap-2">
+    <img
+      src="/mehul-head.png"
+      class="w-10 h-10 rounded-full object-cover border border-gray-300"
+    />
+    <div class="text-sm text-black">
+      Mehul Ristogi
+    </div>
+  </div>
+
+  <!-- Jeff -->
+  <div class="flex items-center gap-2">
+    <img
+      src="/jeff-head.png"
+      class="w-10 h-10 rounded-full object-cover border border-gray-300"
+    />
+    <div class="text-sm text-black">
+      Jeff Erlich
+    </div>
+  </div>
+
+  </div>
+</div>
 
 
 
