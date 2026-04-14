@@ -33,7 +33,7 @@ mdc: true
 
   <!-- Subtitle -->
   <div class="text-lg opacity-70">
-    Tim Sit | 2026-04-23
+    Tim Sit | Duan Lab | 2026-04-23
   </div>
 
 </div>
@@ -54,7 +54,7 @@ clicks: 6
   <div class="absolute top-20 left-0 w-full h-8 pointer-events-none z-0">
     <div class="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-300 to-gray-600 opacity-40 clip-agent-top"></div>
     <div class="absolute right-2 -top-10 text-2xl font-medium">
-      Agent complexity
+      Interactiveness
     </div>
   </div>
 
@@ -98,7 +98,7 @@ clicks: 6
     v-if="$clicks >= 2"
     class="mt-0 text-sm italic leading-snug max-w-[90%]"
   >
-  <div class="flex items-center justify-center gap-4 mb-3">
+  <div class="flex items-center justify-center gap-4 mb-3 -mt-3">
   <img
     src="/oli-head.jpg"
     class="w-14 h-14 rounded-full object-cover border border-gray-300"
@@ -111,8 +111,14 @@ clicks: 6
     src="/jingjie-head.png"
     class="w-14 h-14 rounded-full object-cover border border-gray-300"
   />
+  </div>
+  <div class="flex items-center justify-center gap-4 mb-3 -mt-4">
   <img
     src="/nikos-head.jpg"
+    class="w-14 h-14 rounded-full object-cover border border-gray-300"
+  />
+   <img
+    src="/yang-head.jpg"
     class="w-14 h-14 rounded-full object-cover border border-gray-300"
   />
   </div>
@@ -143,7 +149,7 @@ clicks: 6
       v-if="$clicks >= 6"
       class="mt-0 text-sm italic leading-snug max-w-[90%]"
     >
-  <div class="flex items-center justify-center gap-4 mb-3 mt-20">
+  <div class="flex items-center justify-center gap-4 mb-3 mt-5">
     <img
       src="/joanna-head.png"
       class="w-14 h-14 rounded-full object-cover border border-gray-300"
@@ -152,8 +158,28 @@ clicks: 6
       src="/tim-head.jpg"
       class="w-14 h-14 rounded-full object-cover border border-gray-300"
     />
-    This talk!
+  </div> <br>
+<!-- Julia + hiring placeholder -->
+  <div class="flex items-center justify-center gap-4 mb-3 -mt-5">
+    <img
+      src="/julia-head.jpg"
+      class="w-14 h-14 rounded-full object-cover border border-gray-300 aspect-square shrink-0 overflow-hidden"
+    />
+
+  <div class="w-14 h-14 rounded-full border-2 border-dashed border-gray-500 flex items-center justify-center text-base font-semibold not-italic bg-white text-gray-700 aspect-square shrink-0">
+    You? RA
   </div>
+
+  <span class="not-italic">This talk!</span>
+  </div>
+
+  Aloor* &amp; Sit* et al. 2026<br>
+  <span class="not-italic">
+    Strategic stochasticity in mice and monkeys (in prep)
+  </span> <br>
+  <span class="not-italic">
+  Distinct neuromodulatory contributions to strategic decisions in a competitive multi-player game (in prep)
+  </span>
   </div>
   </div>
 
@@ -178,20 +204,39 @@ clicks: 6
       class="w-full max-w-[50%] object-contain mb-4 mt-0"
     />
   <!-- Headshots in 3 rows -->
-  <div class="grid grid-cols-2 gap-3 justify-items-center -mt-10 relative z-10">
-    <img src="/mehul-head.png" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
-    <img src="/ivana-head.jpg" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
-
-  <img src="/chris-head.png" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
-  <img src="/orsi-head.png" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
-
+  <div class="grid grid-cols-2 gap-0 justify-items-center -mt-1 relative z-10">
+    <div class="w-14 h-14 rounded-full overflow-hidden border border-gray-300 shrink-0">
+    <img
+      src="/mehul-head.png"
+      class="w-full h-full object-cover scale-100"
+    />
+  </div>
+  <div class="w-14 h-14 rounded-full overflow-hidden border border-gray-300 shrink-0">
+    <img
+      src="/ivana-head.jpg"
+      class="w-full h-full object-cover scale-100"
+    />
+  </div>
+  <div class="w-14 h-14 rounded-full overflow-hidden border border-gray-300 shrink-0">
+    <img
+      src="/chris-head.png"
+      class="w-full h-full object-cover scale-100"
+    />
+  </div>
+    <div class="w-14 h-14 rounded-full overflow-hidden border border-gray-300 shrink-0">
+    <img
+      src="/orsi-head.png"
+      class="w-full h-full object-cover scale-100"
+    />
+  </div>
   <!-- Last row (centered single image) -->
   <div class="col-span-2 flex justify-center">
     <img src="/roshni-head.jpg" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
+    <img src="/tom-head.png" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
+    <img src="/bene-head.jpg" class="w-14 h-14 rounded-full object-cover border border-gray-300" />
   </div>
   </div>
   </div>
-  
 
   Erlich, Ristogi ... Orsolic et al. 2026<br>
   <span class="not-italic">
@@ -210,14 +255,18 @@ layout: default
 clicks: 6
 ---
 
-# Rock paper scissors as a way of studying strategic stochasticity
+<h1 class="!text-[1.7rem] !leading-tight">
+
+Rock paper scissors as a way of studying strategic stochasticity
+
+</h1>
 
 <div class="relative w-full h-[560px] mt-1">
 
   <!-- STEP 3: interim title -->
   <div
     v-if="$clicks >= 3"
-    class="absolute top-0 left-15% -translate-x-1/2 text-xl font-semibold text-center transition-all duration-700"
+    class="absolute -top-2 left-15% -translate-x-1/2 text-xl font-semibold text-center transition-all duration-700"
   >
     Rock paper scissors requires <br> strategic stochasticity
   </div>
@@ -225,7 +274,7 @@ clicks: 6
   <!-- STEP 4+: final heading for columns -->
   <div
     v-if="$clicks >= 4"
-    class="absolute top-0 left-[38%] w-[58%] -mt-10 text-center text-xl font-semibold transition-all duration-700"
+    class="absolute top-8 left-[38%] w-[58%] -mt-10 text-center text-xl font-semibold transition-all duration-700"
   >
     Strategic stochasticity exists in <br> nature and across species
   </div>
@@ -269,7 +318,7 @@ clicks: 6
   <!-- MIDDLE COLUMN -->
   <div
     v-if="$clicks >= 5"
-    class="absolute top-[25px] left-[38%] w-[26%] flex flex-col items-center text-center transition-all duration-700"
+    class="absolute top-[50px] left-[38%] w-[26%] flex flex-col items-center text-center transition-all duration-700"
   >
     <div class="text-sm font-semibold leading-snug max-w-xs mb-3">
       Random escape trajectories in prey animals
@@ -291,7 +340,7 @@ clicks: 6
   <!-- RIGHT COLUMN -->
   <div
     v-if="$clicks >= 6"
-    class="absolute top-[25px] right-[2%] w-[26%] flex flex-col items-center text-center transition-all duration-700"
+    class="absolute top-[50px] right-[2%] w-[26%] flex flex-col items-center text-center transition-all duration-700"
   >
     <div class="text-sm font-semibold leading-snug max-w-xs mb-3">
       Fish increase path complexity after being poked
@@ -321,6 +370,7 @@ clicks: 6
 ---
 transition: fade
 layout: two-cols-title
+clicks: 13
 ---
 
 :: title :: 
@@ -360,7 +410,7 @@ layout: two-cols-title
   </v-click>
 
   <v-click at="3">
-    <div class="ml-4">• <b>Matcher</b> wins if same, unmatcher wins if different</div>
+    <div class="ml-4">• <i>Matcher</i> wins if same, unmatcher wins if different</div>
   </v-click>
 
   <v-click at="6">
@@ -380,7 +430,7 @@ layout: two-cols-title
   </v-click>
 
   <v-click at="10">
-    <div class="ml-4">• Nash equilibrium: both players randomise 50/50</div>
+    <div class="ml-4">• Nash equilibrium: both players randomise 50/50, with reward rate of 50%</div>
   </v-click>
 
   <v-click at="11">
@@ -393,6 +443,28 @@ layout: two-cols-title
 
 </div>
 
+<!-- Centered overlay: Talk overview -->
+<div
+  v-if="$clicks === 13"
+  class="absolute inset-0 flex items-center justify-center z-20"
+>
+
+  <!-- content -->
+  <div class="relative bg-white rounded-2xl border-5 border-gray-300 shadow-xl p-6 w-[60%] max-w-[900px] text-center">
+    
+  <div class="text-xl font-semibold mb-4 text-gray-800">
+    Talk overview
+  </div>
+
+
+  <img
+    src="/overview-cartoon.svg"
+    class="w-full object-contain"
+  />
+
+
+  </div>
+</div>
 
 ---
 transition: fade
@@ -404,7 +476,60 @@ clicks: 5
 
 # Scientific questions
 
+
+<!-- Left: overview cartoon -->
+<div class="relative w-full">
+  <div class="rounded-xl border border-gray-300 bg-white p-3 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  <!-- Highlight left half for question 1 -->
+  <div
+    v-if="$clicks === 1"
+    class="absolute inset-y-0 left-0 w-63% border-4 border-blue-500 rounded-l-lg pointer-events-none"
+  ></div>
+
+  <!-- Highlight right half for question 3 -->
+  <div
+    v-if="$clicks === 3"
+    class="absolute inset-y-0 right-0 w-37% border-4 border-red-500 rounded-r-lg pointer-events-none"
+  ></div>
+
+  <!-- Optional de-emphasis of the non-highlighted half -->
+  <div
+    v-if="$clicks === 1"
+    class="absolute inset-y-0 right-0 w-37% bg-white/55 pointer-events-none"
+  ></div>
+
+  <div
+    v-if="$clicks === 3"
+    class="absolute inset-y-0 left-0 w-63% bg-white/55 pointer-events-none"
+  ></div>
+  </div>
+
+  <!-- Highlight left half for question 1 -->
+  <div
+    v-if="$clicks === 4"
+    class="absolute inset-y-0 left-0 w-63% border-4 border-blue-500 rounded-l-lg pointer-events-none"
+  ></div>
+
+  <!-- Optional de-emphasis of the non-highlighted half -->
+  <div
+    v-if="$clicks === 4"
+    class="absolute inset-y-0 right-0 w-37% bg-white/55 pointer-events-none"
+  ></div>
+
+
+</div>
+
+
+
 :: content :: 
+
+
+
 
 <div class="space-y-6 mt-10">
 
@@ -413,9 +538,9 @@ clicks: 5
   <div :class="$clicks >= 4 ? 'opacity-100' : ''">
     <div 
       class="text-lg transition-all duration-500"
-      :class="$clicks >= 4 ? 'text-blue-500 font-semibold' : ''"
+      :class="$clicks >= 4 ? 'text-black-500 font-semibold' : ''"
     >
-      1. What are the behavioural strategies used by mice in a game of matching pennies against a competitive opponent with a stationary strategy? How does it differ between humans and monkeys?
+      1. What are the behavioural strategies used by mice in a game of matching pennies against an opponent with a stationary strategy? How does it differ between humans and monkeys?
     </div>
     <div class="text-sm italic mt-1 ml-4 transition-all duration-500"
          :class="$clicks >= 4 ? 'opacity-90' : 'opacity-70'">
@@ -442,7 +567,7 @@ clicks: 5
 
   <div :class="$clicks >= 4 ? 'opacity-100' : ''">
     <div class="text-lg transition-all duration-500">
-      3. Do mice change their strategy when playing against another mouse, where the strategies of the opponent is no longer stationary?
+      3. Do mice and humans change their strategy when playing against a conspecific, where the strategies of the opponent is no longer stationary?
     </div>
     <div class="text-sm italic opacity-70 mt-1 ml-4">
       Ongoing project
@@ -479,18 +604,18 @@ layout: default
   v-if="$clicks >= 2 && $clicks < 5"
   class="absolute left-1/2 top-[200px] -translate-x-1/2 w-[80%]"
 >
-<ul class="list-disc text-left pl-6 space-y-5">
+<ul class="list-disc text-left pl-6 space-y-2">
 
   <li v-click="2">
     Algorithm 0: coin flip (50/50) for L and R choices
   </li>
 
   <li v-click="3">
-    Algorithm 1: chooses based on stored choice history (sequences of length 4)
+    Algorithm 1: chooses based on stored choice history <br> (sequences of length 1- 4)
   </li>
 
   <li v-click="4">
-    Algorithm 2: chooses based on stored choice and reward history (sequences of length 4) (same as mouse computer opponent)
+    Algorithm 2: chooses based on stored choice and reward history <br> (sequences of length 1 - 4)
   </li>
 
   </ul>
@@ -513,7 +638,7 @@ layout: default
       Why study mice?
     </div>
     <ul class="list-disc pl-5 space-y-1 text-sm">
-      <li>Higher throughput experiments</li>
+      <li>Higher throughput experiments, study of individual differences</li>
       <li>Simultaneous large-scale neural recordings</li>
       <li>Genetic and circuit manipulation tools</li>
     </ul>
@@ -537,7 +662,7 @@ layout: default
       Why study humans?
     </div>
     <ul class="list-disc pl-5 space-y-1 text-sm">
-      <li>Higher throughput</li>
+      <li>Cross-species comparison</li>
       <li>More flexible, sophisticated strategies</li>
     </ul>
   </div>
@@ -566,6 +691,56 @@ layout: default
 
 </div>
 
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute left-[3%] bottom-[3%] w-[18%]"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  <!-- Emphasize left half -->
+  <div
+    v-if="$clicks < 6"
+    class="absolute inset-y-0 left-0 w-30% border-2 border-blue-500 rounded-l-lg pointer-events-none"
+  ></div>
+
+  <!-- Optional de-emphasis -->
+  <div
+    v-if="$clicks < 6"
+    class="absolute inset-y-0 right-0 w-70% bg-white/45 pointer-events-none"
+  ></div>
+
+  <!-- Emphasize left half -->
+  <div
+    v-if="$clicks === 6"
+    class="absolute inset-y-0 left-0 w-46% border-2 border-blue-500 rounded-l-lg pointer-events-none"
+  ></div>
+
+  <!-- Optional de-emphasis -->
+  <div
+    v-if="$clicks === 6"
+    class="absolute inset-y-0 right-0 w-54% bg-white/45 pointer-events-none"
+  ></div>
+
+  <!-- Emphasize left half -->
+  <div
+    v-if="$clicks >= 7"
+    class="absolute inset-y-0 left-0 w-63% border-2 border-blue-500 rounded-l-lg pointer-events-none"
+  ></div>
+
+  <!-- Optional de-emphasis -->
+  <div
+     v-if="$clicks >= 7"
+    class="absolute inset-y-0 right-0 w-37% bg-white/45 pointer-events-none"
+  ></div>
+
+  </div>
+</div>
+
+
 
 
 
@@ -577,7 +752,10 @@ columns: is-5
 
 :: title :: 
 
-# Unsupervised discovery of behavioural strategies using GLM-HMM 
+
+<h1 class="!text-[1.6rem] !leading-tight">
+  Unsupervised discovery of behavioural strategies using GLM-HMM
+</h1>
 
 :: left :: 
 
@@ -614,70 +792,132 @@ columns: is-5
 ---
 transition: fade
 layout: default
-clicks: 5
+clicks: 6
 ---
 
-# Monkeys adapt their strategy to the competitive pressure from their opponent
+<h1 class="!text-[1.4rem] !leading-tight">
+Monkeys adapt their strategy to the competitive pressure from their opponent
+</h1>
 
 <div class="w-full flex justify-center">
   <div class="relative w-full h-[760px] overflow-hidden">
 
   <!-- Cartoon -->
   <img
-    src="/monkey-algorithms-cartoon-v3.svg"
-    class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
+    src="/monkey-algorithms-cartoon-v4.svg"
+    class="absolute left-[61%] -translate-x-1/2 transition-all duration-700 ease-in-out"
     :style="$clicks === 1
-      ? 'top: 90px; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 90px; width: 95%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 2
-      ? 'top: 5%; width: 58%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 5%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : $clicks === 3
+      ? 'top: 0%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 58%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
 
   <!-- Example choices -->
   <img
     src="/monkey_E_example_choices_per_algorithm.svg"
-    class="absolute left-[45%] -translate-x-1/2 transition-all duration-700 ease-in-out"
+    class="absolute left-[50%] -translate-x-1/2 transition-all duration-700 ease-in-out"
     :style="$clicks < 2
       ? 'top: 35%; width: 52%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
       : $clicks === 2
-      ? 'top: 30%; width: 52%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 30%; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 3
-      ? 'top: 40px; width: 52%; opacity: 1; transform: translateX(-40%) scale(1);'
+      ? 'top: 24%; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : $clicks === 4
+      ? 'top: 40px; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 52%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
+  />
+
+   <!-- Reward rate per algorithm -->
+  <img
+    src="/monkey_reward_rate_per_algorithm.svg"
+    class="absolute left-[55%] -translate-x-1/2 transition-all duration-700 ease-in-out z-2"
+    :style="$clicks < 3
+      ? 'top: 55%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
+      : $clicks === 3
+      ? 'top: 43%; width: 90%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : 'top: 50%; width: 55%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
 
   <!-- State weights -->
   <img
     src="/monkey_state_weights_colored.svg"
-    class="absolute left-[48%] -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 3
+    class="absolute left-[49%] -translate-x-1/2 transition-all duration-700 ease-in-out"
+    :style="$clicks < 4
       ? 'top: 24%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : $clicks === 3
-      ? 'top: 20%; width: 60%; opacity: 1; transform: translateX(-50%) scale(1);'
-      : 'top: 0%; width: 44%; opacity: 1; transform: translateX(-50%) scale(1);'"
+      : $clicks === 4
+      ? 'top: 24%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : 'top: 2%; width: 60%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
 
   <!-- Per-session summary -->
   <img
     src="/monkey_state_per_session_summary.svg"
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 4
+    :style="$clicks < 5
       ? 'top: 30%; width: 80%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : 'top: 25%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'"
+      : 'top: 30%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
 
   </div>
 </div>
 
 
+<!-- Algorithm labels -->
+<div v-if="$clicks === 4" class="absolute inset-0 pointer-events-none">
+
+  <!-- Algorithm 0 -->
+  <div class="absolute top-[15%] left-[27%] text-[1.1rem] font-semibold text-[#2ca6a4ff]">
+    Algorithm 0
+  </div>
+
+  <!-- Algorithm 1 -->
+  <div class="absolute top-[15%] left-[48%] text-[1.1rem] font-semibold text-[#e3b505ff]">
+    Algorithm 1
+  </div>
+
+  <!-- Algorithm 2 -->
+  <div class="absolute top-[15%] left-[67%] text-[1.1rem] font-semibold text-[#4f6db8ff]">
+    Algorithm 2
+  </div>
+
+</div>
+
+
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute left-[1%] bottom-[2%] w-[14%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  <!-- Emphasize left half -->
+  <div
+    class="absolute inset-y-0 left-0 w-30% border-2 border-blue-500 rounded-l-lg pointer-events-none"
+  ></div>
+
+  <!-- Optional de-emphasis -->
+  <div
+    class="absolute inset-y-0 right-0 w-70% bg-white/45 pointer-events-none"
+  ></div>
+
+  </div>
+
+</div>
+
+
 ---
 transition: fade
-clicks: 4
+clicks: 5
 ---
 
 
 # Mice alternate between bias and stochastic states
-
 
 <div class="w-full flex justify-center">
   <div class="relative w-full h-[760px] overflow-hidden">
@@ -687,11 +927,30 @@ clicks: 4
     src="/mouse-against-algorithm-2-v2.svg"
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
     :style="$clicks === 1
-      ? 'top: 90px; width: 36%; opacity: 1; transform: translateX(-50%) scale(1);'
-      : $clicks === 2
-      ? 'top: 5%; width: 36%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 0%; width: 36%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : $clicks <= 3
+      ? 'top: 0%; width: 36%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 36%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
+
+  <!-- Purple note -->
+  <div
+    v-click="1"
+    class="absolute top-[6%] right-[4%] max-w-[26%] 
+          bg-purple-100 border border-purple-300 
+          rounded-xl px-4 py-3 shadow-sm
+          transition-all duration-700"
+    :style="$clicks <= 3
+      ? 'opacity: 1; transform: translateY(0);'
+      : 'opacity: 0; transform: translateY(-10px);'"
+  >
+    <div class="text-purple-800 font-semibold text-sm mb-1">
+      Why only algorithm 2?
+    </div>
+    <div class="text-purple-900 text-sm leading-snug">
+      Allows for tracking changes in strategy over learning against the same opponent
+    </div>
+  </div>
 
   <!-- Example choices -->
   <img
@@ -700,29 +959,42 @@ clicks: 4
     :style="$clicks < 2
       ? 'top: 35%; width: 68%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
       : $clicks === 2
-      ? 'top: 30%; width: 68%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 20%; width: 68%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 3
-      ? 'top: 40px; width: 68%; opacity: 1; transform: translateX(-50%) scale(1);'
-      : 'top: 0%; width: 68%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
+      ? 'top: 20%; width: 68%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : $clicks === 4
+      ? 'top: 2%; width: 68%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : 'top: 2%; width: 68%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
+  />
+
+  <!-- Reward rate -->
+  <img
+    src="/mouse_reward_rate_over_sessions.svg"
+    class="absolute left-[46%] -translate-x-1/2 transition-all duration-700 ease-in-out z-[2]"
+    :style="$clicks < 3
+      ? 'top: 55%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
+      : $clicks === 3
+      ? 'top: 43%; width: 62%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : 'top: 48%; width: 62%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
 
   <!-- GLM-HMM weights -->
   <img
     src="/glmhmm_glm_weights (1).png"
-    class="absolute left-[50%] -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 3
-      ? 'top: 26%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : $clicks === 3
-      ? 'top: 32%; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
-      : 'top: 5%; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'"
+    class="absolute left-[48%] -translate-x-1/2 transition-all duration-700 ease-in-out"
+    :style="$clicks < 4
+      ? 'top: 60%; width: 70%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
+      : $clicks === 4
+      ? 'top: 30%; width: 68%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : 'top: 4%; width: 68%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
 
   <!-- Learning summary -->
   <img
     src="/average_pstate_smooth_cosyneabstract2025.svg"
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 4
-      ? 'top: 30%; width: 50%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
+    :style="$clicks < 5
+      ? 'top: 50%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
       : 'top: 30%; width: 50%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
 
@@ -730,13 +1002,37 @@ clicks: 4
 </div>
 
 
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute left-[1%] bottom-[2%] w-[18%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  <!-- Emphasize -->
+  <div
+    class="absolute inset-y-0 left-12 w-20% border-2 border-blue-500 rounded-lg-lg pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    class="absolute inset-y-0 right-0 w-52% bg-white/45 pointer-events-none"
+  ></div>
+
+  </div>
+
+</div>
+
 
 
 
 ---
 transition: fade
 layout: default
-clicks: 4
+clicks: 5
 ---
 
 # Humans alternate between win-stay and win-switch states
@@ -750,31 +1046,66 @@ clicks: 4
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
     :style="$clicks === 1
       ? 'top: 90px; width: 34%; opacity: 1; transform: translateX(-50%) scale(1);'
-      : $clicks === 2
+      : $clicks <= 3
       ? 'top: 5%; width: 26%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 26%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
 
-  <!-- Example choices -->
-  <img
-    src="/example_human_choices.svg"
-    class="absolute left-[48%] -translate-x-1/2 transition-all duration-700 ease-in-out"
+  <!-- Purple note -->
+  <div
+    v-click="1"
+    class="absolute top-[17%] right-[4%] max-w-[26%] 
+          bg-purple-100 border border-purple-300 
+          rounded-xl px-4 py-3 shadow-sm
+          transition-all duration-700"
+    :style="$clicks <= 1
+      ? 'opacity: 1; transform: translateY(0);'
+      : 'opacity: 0; transform: translateY(-10px);'"
+  >
+    <div class="text-purple-800 font-semibold text-sm mb-1">
+      Single session experiments
+    </div>
+    <div class="text-purple-900 text-sm leading-snug">
+      Compared to mice and monkeys, we expect faster learning from humans
+    </div>
+  </div>
+
+
+  <!-- Example choices: smooth zoom-out from cropped to full -->
+  <div
+    class="absolute left-[48%] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-700 ease-in-out"
     :style="$clicks < 2
-      ? 'top: 35%; width: 58%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
+      ? 'top: 35%; width: 58%; height: 180px; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
       : $clicks === 2
-      ? 'top: 30%; width: 58%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 20%; width: 38%; height: 50%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 3
-      ? 'top: 40px; width: 58%; opacity: 1; transform: translateX(-50%) scale(1);'
-      : 'top: 0%; width: 58%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
-  />
+      ? 'top: 25%; width: 58%; height: 260px; opacity: 1; transform: translateX(-50%) scale(1);'
+      : $clicks === 4
+      ? 'top: 40px; width: 58%; height: 260px; opacity: 1; transform: translateX(-50%) scale(1);'
+      : 'top: 0%; width: 58%; height: 260px; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
+  >
+    <img
+      src="/example_human_choices.svg"
+      class="absolute transition-all duration-700 ease-in-out"
+      :style="$clicks < 2
+        ? 'max-width: none; width: 360%; left: -115%; top: 0%;'
+        : $clicks === 2
+        ? 'max-width: none; width: 360%; left: -115%; top: 0%;'
+        : $clicks === 3
+        ? 'max-width: none; width: 100%; left: 0%; top: 0%;'
+        : $clicks === 4
+        ? 'max-width: none; width: 100%; left: 0%; top: 0%;'
+        : 'max-width: none; width: 100%; left: 0%; top: 0%;'"
+    />
+  </div>
 
   <!-- State weights -->
   <img
     src="/human_solo_mp_states.svg"
-    class="absolute left-[50%] -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 3
+    class="absolute left-[47%] -translate-x-1/2 transition-all duration-700 ease-in-out"
+    :style="$clicks < 4
       ? 'top: 26%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : $clicks === 3
+      : $clicks === 4
       ? 'top: 22%; width: 60%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 44%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
@@ -783,12 +1114,37 @@ clicks: 4
   <img
     src="/human_pstate_over_session.svg"
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 4
+    :style="$clicks < 5
       ? 'top: 30%; width: 80%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
       : 'top: 25%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
 
   </div>
+</div>
+
+
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute left-[1%] bottom-[2%] w-[18%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  <!-- Emphasize -->
+  <div
+    class="absolute inset-y-0 left-19.5 w-19% border-2 border-blue-500 rounded-lg-lg pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    class="absolute inset-y-0 right-0 w-35% bg-white/45 pointer-events-none"
+  ></div>
+
+  </div>
+
 </div>
 
 
@@ -827,9 +1183,11 @@ transition: fade
 clicks: 5
 ---
 
+<h1 class="!text-[1.5orem] !leading-tight">
 
+To what extent do each species manage to show random choice patterns?
 
-# To what extent do each species manage to show random choice patterns?
+</h1>
 
 <div class="-mt-2">
 
@@ -909,6 +1267,32 @@ clicks: 5
 </div>
 
 
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute left-[1%] bottom-[1%] w-[18%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  <!-- Emphasize -->
+  <div
+    class="absolute inset-y-0 left-0 w-63% border-2 border-blue-500 rounded-lg-lg pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    class="absolute inset-y-0 right-0 w-35% bg-white/45 pointer-events-none"
+  ></div>
+
+  </div>
+
+</div>
+
+
+
 ---
 transition: fade
 layout: side-title
@@ -918,6 +1302,61 @@ clicks: 5
 :: title :: 
 
 # Part I Summary
+
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute left-[1%] bottom-[25%] w-[30%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+
+  <!-- Emphasize -->
+  <div
+    v-if="$clicks === 2"
+    class="absolute inset-y-0 left-20 w-19% border-3 border-blue-500 rounded-lg-lg pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    v-if="$clicks === 2"
+    class="absolute inset-y-0 right-0 w-52% bg-white/45 pointer-events-none"
+  ></div>
+
+
+  <!-- Emphasize -->
+  <div
+    v-if="$clicks === 3"
+    class="absolute inset-y-0 left-0 w-28% border-3 border-blue-500 rounded-l-lg pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    v-if="$clicks === 3"
+    class="absolute inset-y-0 right-0 w-52% bg-white/45 pointer-events-none"
+  ></div>
+
+
+  <!-- Emphasize -->
+  <div
+    v-if="$clicks === 4"
+    class="absolute inset-y-0 left-33 w-18% border-3 border-blue-500 rounded-lg-lg pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    v-if="$clicks === 4"
+    class="absolute inset-y-0 right-0 w-35% bg-white/45 pointer-events-none"
+  ></div>
+
+  </div>
+
+</div>
+
+
 
 :: content :: 
 
@@ -959,6 +1398,9 @@ clicks: 5
   </div>
 
 </div>
+
+
+
 
 
 
@@ -1063,7 +1505,7 @@ onMounted(() => {
 </script>
 
 <!-- Acknowledgement (bottom-left) -->
-<div class="absolute bottom-6 left-6">
+<div class="absolute bottom-6 left-85">
   <div class="bg-white px-4 py-2 rounded-lg shadow-md flex items-center gap-6">
 
   <!-- Mehul -->
@@ -1092,6 +1534,37 @@ onMounted(() => {
 </div>
 
 
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute left-[1%] bottom-[1%] w-[18%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  <!-- Emphasize -->
+  <div
+    class="absolute inset-y-0 left-27 w-19% border-2 border-blue-500 rounded-lg-lg pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    class="absolute inset-y-0 right-0 w-19% bg-white/45 pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    class="absolute inset-y-0 left-0 w-62% bg-white/45 pointer-events-none"
+  ></div>
+
+
+  </div>
+
+</div>
+
+
 
 ---
 transition: fade
@@ -1100,7 +1573,7 @@ clicks: 6
 ---
 
 
-# Preliminary result: mice decrease their entropy when playing against a conspecific
+# Mice decrease their entropy when playing against a conspecific
 
 <div class="relative w-full h-[720px]">
 
@@ -1167,6 +1640,37 @@ clicks: 6
 
 </div>
 
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute left-[1%] bottom-[1%] w-[18%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  <!-- Emphasize -->
+  <div
+    class="absolute inset-y-0 left-27 w-19% border-2 border-blue-500 rounded-lg-lg pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    class="absolute inset-y-0 right-0 w-19% bg-white/45 pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    class="absolute inset-y-0 left-0 w-62% bg-white/45 pointer-events-none"
+  ></div>
+
+
+  </div>
+
+</div>
+
+
 
 ---
 transition: fade
@@ -1174,7 +1678,7 @@ layout: default
 ---
 
 
-# Preliminary result: humans also decrease their entropy (slightly) when playing against another human
+# Humans decrease their entropy  when playing against another human
 
 
 <div class="w-full flex justify-center">
@@ -1205,6 +1709,34 @@ layout: default
 </div>
 
 
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute left-[1%] bottom-[1%] w-[18%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  <!-- Emphasize -->
+  <div
+    class="absolute inset-y-0 left-34.5 w-21% border-2 border-blue-500 rounded-lg-l pointer-events-none"
+  ></div>
+
+
+  <!-- de-emphasis -->
+  <div
+    class="absolute inset-y-0 left-0 w-80% bg-white/45 pointer-events-none"
+  ></div>
+
+
+  </div>
+
+</div>
+
+
+
 
 ---
 transition: fade
@@ -1216,11 +1748,7 @@ clicks: 7
 
 <div class="mt-6 space-y-3">
   <div v-click="1" class="text-lg">
-    - We observed changes in choice statistics when animals move from playing against a computer to playing against a conspecific
-  </div>
-
-  <div v-click="2" class="text-lg">
-    - Question: How does an individuals training history shape their subsequent strategy?
+  Question: How does an individuals training history shape their subsequent strategy?
   </div>
 </div>
 
@@ -1232,7 +1760,7 @@ clicks: 7
 
   <!-- Left -->
   <div
-    :class="$clicks >= 3 ? 'opacity-100' : 'opacity-0'"
+    :class="$clicks >= 2 ? 'opacity-100' : 'opacity-0'"
     class="absolute left-[0%] top-[0%] w-[60%] transition-all duration-700"
   >
     <div class="relative w-full h-[320px]">
