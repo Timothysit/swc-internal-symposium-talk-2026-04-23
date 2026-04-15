@@ -540,7 +540,7 @@ clicks: 5
       class="text-lg transition-all duration-500"
       :class="$clicks >= 4 ? 'text-black-500 font-semibold' : ''"
     >
-      1. What are the behavioural strategies used by mice in a game of matching pennies against an opponent with a stationary strategy? How does it differ between humans and monkeys?
+      1. What are the behavioural strategies used by mice in a game of matching pennies against an opponent with a stationary strategy? How does it differ in humans and monkeys?
     </div>
     <div class="text-sm italic mt-1 ml-4 transition-all duration-500"
          :class="$clicks >= 4 ? 'opacity-90' : 'opacity-70'">
@@ -774,6 +774,23 @@ columns: is-5
 
 
 <img src="/p_state_4_states.svg" class="opacity-100 w-[100%]" v-click="3"/>
+
+
+<!-- Joseph Warren acknowledgement -->
+<div 
+  v-click="1"
+  class="absolute bottom-45 left-30 flex items-center gap-3"
+>
+<img
+  src="/jo-head-v2.jpeg"
+  class="w-12 h-12 rounded-full object-cover border border-gray-300 shrink-0"
+  style="image-rendering: -webkit-optimize-contrast;"
+/>
+  <div class="text-sm">
+    Joseph Warren
+  </div>
+</div>
+
 
 
 <div v-click="1" class="absolute bottom-10 left-12 w-[36%] text-sm opacity-75 leading-snug">
@@ -1032,7 +1049,7 @@ clicks: 5
 ---
 transition: fade
 layout: default
-clicks: 5
+clicks: 6
 ---
 
 # Humans alternate between win-stay and win-switch states
@@ -1043,7 +1060,7 @@ clicks: 5
   <!-- Human image -->
   <img
     src="/human-vs-algorithm-2-v2.svg"
-    class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
+    class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out -mt-10"
     :style="$clicks === 1
       ? 'top: 90px; width: 34%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks <= 3
@@ -1054,7 +1071,7 @@ clicks: 5
   <!-- Purple note -->
   <div
     v-click="1"
-    class="absolute top-[17%] right-[4%] max-w-[26%] 
+    class="absolute top-[13%] right-[4%] max-w-[26%] 
           bg-purple-100 border border-purple-300 
           rounded-xl px-4 py-3 shadow-sm
           transition-all duration-700"
@@ -1077,9 +1094,9 @@ clicks: 5
     :style="$clicks < 2
       ? 'top: 35%; width: 58%; height: 180px; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
       : $clicks === 2
-      ? 'top: 20%; width: 38%; height: 50%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 15%; width: 38%; height: 50%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 3
-      ? 'top: 25%; width: 58%; height: 260px; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 18%; width: 58%; height: 260px; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 4
       ? 'top: 40px; width: 58%; height: 260px; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 58%; height: 260px; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
@@ -1098,6 +1115,19 @@ clicks: 5
         : 'max-width: none; width: 100%; left: 0%; top: 0%;'"
     />
   </div>
+
+  <!-- Reward rate over time -->
+  <img
+    src="/humans_reward_rate_over_time.svg"
+    class="absolute left-[44%] -translate-x-1/2 transition-all duration-700 ease-in-out"
+    :style="$clicks < 3
+      ? 'top: 55%; width: 50%; opacity: 0; transform: translateX(-50%) translateY(10px) scale(0.96); pointer-events: none;'
+      : $clicks === 3
+      ? 'top: 35%; width: 68%; opacity: 1; transform: translateX(-50%) translateY(0px) scale(1);'
+      : $clicks === 4
+      ? 'top: 65%; width: 44%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : 'top: 65%; width: 44%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
+  />
 
   <!-- State weights -->
   <img
@@ -1120,6 +1150,35 @@ clicks: 5
   />
 
   </div>
+</div>
+
+
+<!-- Conclusion note -->
+<div
+  v-click="6"
+  class="absolute left-[35%] bottom-[30%] max-w-[32%]
+         bg-purple-100 border border-purple-300
+         rounded-xl px-5 py-4 shadow-md
+         transition-all duration-700 ease-in-out"
+  :style="$clicks < 6
+    ? 'opacity: 0; transform: translateY(20px) scale(0.98);'
+    : 'opacity: 1; transform: translateY(0px) scale(1);'"
+>
+  <div class="text-purple-800 font-semibold text-sm mb-2">
+    Human experiment results
+  </div>
+
+  <ul class="text-purple-900 text-sm leading-snug space-y-2">
+    <li>
+      Humans begin the task with more sophisticated strategies than mice
+    </li>
+    <li>
+    <span class="italic">Question:</span> Will humans eventually learn more stochastic strategies if given more time?
+    </li>
+    <li>
+      How random are humans compare to mice and monkeys?
+    </li>
+  </ul>
 </div>
 
 
@@ -1151,41 +1210,12 @@ clicks: 5
 
 ---
 transition: fade
-layout: side-title
-clicks: 4
----
-
-:: title ::
-
-# Interim summary 
-
-:: content :: 
-<div class="mt-25">
-
-<v-clicks>
-
-1. GLM-HMM captures changes in the monkey's strategy in response to changes in the computer opponent, and succesfully learns randomise in response to a predictive computer opponent 
-2. Mice also learn to randomise, going from biased states to stochastic states
-3. Humans tend to start with win-stay strategies followed by a mix of win-stay and win-switch strategies
-
-</v-clicks>
-
-</div>
-
-<v-click>
-
-**To what extent do each species manage to show random choice patterns?**
-
-</v-click>
-
----
-transition: fade
 clicks: 5
 ---
 
 <h1 class="!text-[1.5orem] !leading-tight">
 
-To what extent do each species manage to show random choice patterns?
+Cross-species differences in strategic stochasticity
 
 </h1>
 
@@ -1204,7 +1234,7 @@ To what extent do each species manage to show random choice patterns?
       Monkeys stay in the stochastic state consistently
     </div>
     <img
-      src="/mouse_monkey_inverted_U_shape_p_stochastic_v3.svg"
+      src="/mouse_monkey_inverted_U_shape_p_stochastic_v4.svg"
       class="w-full max-w-[100%] object-contain"
     />
   </div>
@@ -1303,9 +1333,19 @@ clicks: 5
 
 # Part I Summary
 
+
+<div class="flex flex-col items-center gap-4">
+
+  <img
+    src="/all_species_glm_hmm_weights_edited.svg"
+    class="w-[100%] object-contain"
+  />
+
+</div>
+
 <!-- Bottom-left overview panel -->
 <div
-  class="absolute left-[1%] bottom-[25%] w-[30%] z-0"
+  class="absolute left-[1%] bottom-[5%] w-[30%] z-0"
 >
   <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
     <img
@@ -1313,46 +1353,19 @@ clicks: 5
       class="w-full object-contain"
     />
 
-
   <!-- Emphasize -->
   <div
-    v-if="$clicks === 2"
-    class="absolute inset-y-0 left-20 w-19% border-3 border-blue-500 rounded-lg-lg pointer-events-none"
+    v-if="$clicks >= 1"
+    class="absolute inset-y-0 left-0 w-63% border-3 border-blue-500 rounded-l-lg pointer-events-none"
   ></div>
 
   <!-- de-emphasis -->
   <div
-    v-if="$clicks === 2"
-    class="absolute inset-y-0 right-0 w-52% bg-white/45 pointer-events-none"
+    v-if="$clicks >= 1"
+    class="absolute inset-y-0 right-0 w-34% bg-white/45 pointer-events-none"
   ></div>
 
-
-  <!-- Emphasize -->
-  <div
-    v-if="$clicks === 3"
-    class="absolute inset-y-0 left-0 w-28% border-3 border-blue-500 rounded-l-lg pointer-events-none"
-  ></div>
-
-  <!-- de-emphasis -->
-  <div
-    v-if="$clicks === 3"
-    class="absolute inset-y-0 right-0 w-52% bg-white/45 pointer-events-none"
-  ></div>
-
-
-  <!-- Emphasize -->
-  <div
-    v-if="$clicks === 4"
-    class="absolute inset-y-0 left-33 w-18% border-3 border-blue-500 rounded-lg-lg pointer-events-none"
-  ></div>
-
-  <!-- de-emphasis -->
-  <div
-    v-if="$clicks === 4"
-    class="absolute inset-y-0 right-0 w-35% bg-white/45 pointer-events-none"
-  ></div>
-
-  </div>
+</div>
 
 </div>
 
@@ -1365,36 +1378,42 @@ clicks: 5
   <!-- Question -->
   <div v-click class="space-y-1">
     <div class="text-lg">
-    1. What behavioural strategies do mice use in matching pennies against a competitive but stationary opponent?
-    <br>
-    How does this compare to humans and monkeys?
+    1. What behavioural strategies do mice use in matching pennies against a competitive opponent? How does this compare to humans and monkeys?
   </div>
 
   <div class="text-sm italic text-gray-500 ml-2">
-    Aloor, Sit et al. — <span class="italic">in preparation</span>
+    Aloor, Sit et al. Strategic stochasticity in mice and monkeys <span class="italic">(in prep)</span>
   </div>
   </div>
 
   <!-- Bullet points -->
   <div class="mt-4 space-y-3 text-lg">
   <div v-click>
-    • Mice alternate between bias and stochastic states, increasing stochasticity with learning
+    • Competitive pressure can drive animals towards strategic stochastic behaviour
   </div>
 
   <div v-click>
-    • Monkeys maintain stochastic strategies consistently throughout sessions
-  </div>
-
-  <div v-click>
-    • Humans begin with win-stay, then transition to more mixed strategies
+    • Across species, the strategic modes are different, and may be dependent on training history and length
   </div>
 </div>
 
-  <!-- Final transition question -->
-  <div v-click class="mt-8 text-xl font-semibold text-center">
-    Do mice change their strategy when playing against another mouse,
-    <br>
-    where the opponent is no longer stationary?
+
+  <!-- Question -->
+  <div v-click class="space-y-1">
+    <div class="text-lg">
+    2. We have some ideas on how this may be implemented in the mouse brain (talk to me and Joanna!)
+  </div>
+
+  <div class="text-sm italic text-gray-500 ml-2">
+    Aloor, Sit et al. Distinct neuromodulatory contributions to strategic decisions in a competitive multi-player game<span class="italic">(in prep)</span>
+  </div>
+  </div>
+
+  <!-- Question -->
+  <div v-click class="space-y-1 font-semibold">
+    <div class="text-lg">
+    3. So far, this has been studied against stationary opponents. What changes when the opponent is another adaptive animal?
+  </div>
   </div>
 
 </div>
@@ -1412,52 +1431,61 @@ layout: default
 # Towards animal vs animal multi-agent behaviour
 
 
-
-<div class="grid grid-cols-2 gap-6 mt-30 w-full items-start">
-
-<!-- Column 1 -->
-<div v-click="1" class="flex flex-col items-center text-center gap-0">
-  
-  <div class="text-2xl font-semibold leading-snug max-w-xs">
+  <!-- Labels on overview -->
+  <div class="absolute top-[20%] left-[38%] -translate-x-1/2 text-2xl font-semibold text-gray-800 bg-white/80 px-3 py-1 rounded-md shadow-sm">
     Animal vs Computer
   </div>
 
-  <img
-    src="/animal-experimenter-interaction-v2.svg"
-    class="h-80 object-contain rounded-lg -mt-20"
-  />
-</div>
-
-<!-- Column 2 -->
-<div v-click="1" class="flex flex-col items-center text-center gap-0">
-  
-  <div class="text-2xl font-semibold leading-snug max-w-xs">
+  <div class="absolute top-[20%] left-[75%] -translate-x-1/2 text-2xl  font-semibold text-gray-800 bg-white/80 px-3 py-1 rounded-md shadow-sm">
     Animal vs Animal
   </div>
 
-  <img
-    src="/animal-animal-interaction-v2.svg"
-    class="h-80 object-contain rounded-lg -mt-20"
-  />
-</div>
 
-<!-- Glow highlight -->
+<!-- Bottom-left overview panel -->
 <div
-  v-click="2"
-  class="pointer-events-none absolute left-[50%] top-[15%] w-[45%] h-[75%] rounded-full"
-  style="
-    box-shadow:
-      0 0 0 4px rgba(255, 100, 100, 0.4),
-      0 0 40px rgba(255, 100, 100, 0.25);
-  "
-></div>
+  class="absolute left-[10%] bottom-[25%] w-[80%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+
+  <!-- Emphasize -->
+  <div
+    v-if="$clicks === 1"
+    class="absolute inset-y-0 left-0 w-63% border-3 border-blue-500 rounded-l-lg pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    v-if="$clicks === 1"
+    class="absolute inset-y-0 right-0 w-33% bg-white/45 pointer-events-none"
+  ></div>
+
+
+  <!-- Emphasize -->
+  <div
+    v-if="$clicks >= 2"
+    class="absolute inset-y-0 left-122 w-50% border-3 border-blue-500 rounded-lg-l pointer-events-none"
+  ></div>
+
+  <!-- de-emphasis -->
+  <div
+    v-if="$clicks >= 2"
+    class="absolute inset-y-0 left-0 w-62% bg-white/45 pointer-events-none"
+  ></div>
+
+  </div>
+
 </div>
 
 
 <!-- Pop-up note -->
   <div
     v-click="3"
-    class="absolute left-[10%] bottom-[25%] w-[42%] rounded-2xl bg-yellow-100 border-2 border-yellow-300 shadow-xl p-5 rotate-[-2deg]"
+    class="absolute left-[10%] bottom-[19%] w-[42%] rounded-2xl bg-yellow-100 border-2 border-yellow-300 shadow-xl p-5 rotate-[-2deg]"
   >
     <div class="text-lg font-bold mb-3">
       What can we learn / test that we can't with animal vs computer?
@@ -1465,10 +1493,13 @@ layout: default
 
   <ul class="text-base leading-snug space-y-2 pl-5 list-disc">
     <li>
-      Do mice change strategy when playing against the choice statistics of another mouse?
+      Our current computer algorithm is rational and has a strategy that does not change over time
     </li>
     <li>
-      What choice statistics emerge from animal-vs-animal games? Is it different from animal-vs-computer games?
+      How do animals exploit the choice statistics of a suboptimal agent? 
+    </li>
+    <li>
+      How do animals adapt their strategy when playing against an opponent with strategies that can change over time?
     </li>
   </ul>
   </div>
@@ -1572,8 +1603,11 @@ layout: default
 clicks: 6
 ---
 
+<h1 class="!text-[1.8rem] !leading-tight">
 
-# Mice decrease their entropy when playing against a conspecific
+Mice are not as random when playing aganist another mouse
+
+</h1>
 
 <div class="relative w-full h-[720px]">
 
@@ -1678,11 +1712,16 @@ layout: default
 ---
 
 
-# Humans decrease their entropy  when playing against another human
+<h1 class="!text-[1.65rem] !leading-tight">
+
+Humans are also less random when playing against another human
+
+</h1>
+
 
 
 <div class="w-full flex justify-center">
-  <div class="relative w-full h-[75vh]">
+  <div class="relative w-full h-[800px]">
 
   <!-- Top image (Click 1) -->
   <img
@@ -1906,7 +1945,7 @@ transition: fade
 <p class="text-lg font-semibold italic text-teal-600">What are the behavioural strategies used by mice in a game of matching pennies against a competitive opponent?</p>
 <p class="text-base text-gray-700 mb-4 ml-4">Mice exhibit bias and stochastic states. Within a session, bias states are more likely to occur in the beginning and end of a session. Across learning, mice are more likely to be in the stochastic state.</p>
 
-<p class="text-lg font-semibold italic text-teal-600">How does this behaviour differ between humans and monkeys?</p>
+<p class="text-lg font-semibold italic text-teal-600">How does this behaviour differ in humans and monkeys?</p>
 <p class="text-base text-gray-700 mb-4 ml-4">Monkeys maintain in the stochastic state more consistently. Whereas humans tend to first use a win-stay strategy followed by a mix of strategies</p>
 
 <p class="text-lg font-semibold italic text-teal-600">Do we observed a change in behaviour when switching from playing against a computer to player against a conspecific?</p>
