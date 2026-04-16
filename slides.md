@@ -824,7 +824,7 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
     src="/monkey-algorithms-cartoon-v4.svg"
     class="absolute left-[61%] -translate-x-1/2 transition-all duration-700 ease-in-out"
     :style="$clicks === 1
-      ? 'top: 90px; width: 95%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 90px; width: 90%; opacity: 1; transform: translateX(-55%) scale(1);'
       : $clicks === 2
       ? 'top: 5%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 3
@@ -1210,7 +1210,7 @@ clicks: 6
 
 ---
 transition: fade
-clicks: 5
+clicks: 7
 ---
 
 <h1 class="!text-[1.5orem] !leading-tight">
@@ -1239,29 +1239,18 @@ Cross-species differences in strategic stochasticity
     />
   </div>
 
-  <!-- Column 2 -->
-  <div v-click="2" class="flex flex-col items-center text-center">
-    <div class="text-lg font-semibold leading-snug mb-4">
-      Entropy correlates with P(stochastic)
-    </div>
-    <img
-      src="/mouse_monkey_pstochastic_and_entropy.svg"
-      class="w-full max-w-[70%] object-contain"
-    />
+<!-- Column 2 -->
+<div v-click="2" class="flex flex-col items-center text-center">
+  <div class="text-lg font-semibold leading-snug mb-4">
+    Entropy correlates with P(stochastic)
   </div>
 
-  <!-- Column 3, click 3 -->
-  <div
-    v-if="$clicks === 3"
-    class="flex flex-col items-center text-center"
-  >
-    <div class="text-lg font-semibold leading-snug mb-4">
-      Monkeys show higher entropy during stochastic state
-    </div>
-    <img
-      src="/segment_length_vs_entropy_zoomed_in.svg"
-      class="w-full max-w-[70%] object-contain"
-    />
+  <!-- Main plot -->
+  <img
+    src="/mouse_monkey_pstochastic_and_entropy.svg"
+    class="w-full max-w-[70%] object-contain ml-5 -mt-8"
+  />
+
   </div>
 
   <!-- Column 3, click 4 -->
@@ -1273,14 +1262,28 @@ Cross-species differences in strategic stochasticity
       Monkeys show higher entropy during stochastic state
     </div>
     <img
-      src="/segment_length_vs_entropy_zoomed_in_w_human.svg"
-      class="w-full max-w-[70%] object-contain"
+      src="/segment_length_vs_entropy_zoomed_in.svg"
+      class="w-full max-w-[70%] object-contain -mt-4"
     />
   </div>
 
   <!-- Column 3, click 5 -->
   <div
-    v-if="$clicks >= 5"
+    v-if="$clicks === 5"
+    class="flex flex-col items-center text-center"
+  >
+    <div class="text-lg font-semibold leading-snug mb-4">
+      Humans also show higher entropy during stochastic state
+    </div>
+    <img
+      src="/segment_length_vs_entropy_zoomed_in_w_human.svg"
+      class="w-full max-w-[70%] object-contain -mt-4"
+    />
+  </div>
+
+  <!-- Column 3, click 6 -->
+  <div
+    v-if="$clicks >= 6"
     class="flex flex-col items-center text-center"
   >
     <div class="text-lg font-semibold leading-snug mb-4">
@@ -1294,6 +1297,70 @@ Cross-species differences in strategic stochasticity
 
 </div>
 
+</div>
+
+<!-- Entropy example overlays -->
+<div v-if="$clicks === 3">
+
+  <!-- Left: Low entropy -->
+  <div
+    class="absolute left-[2%] bottom-[6%] w-[40%] z-20
+           bg-white rounded-xl shadow-lg border border-gray-300 p-3
+           transition-all duration-700 ease-in-out"
+    :style="$clicks === 3 
+      ? 'opacity: 1; transform: translateY(0);' 
+      : 'opacity: 0; transform: translateY(20px);'"
+  >
+    <div class="text-sm font-semibold mb-1 text-center">
+      Low entropy
+    </div>
+    <img
+      src="/low_entropy_session.svg"
+      class="w-full object-contain"
+    />
+  </div>
+
+  <!-- Right: High entropy -->
+  <div
+    class="absolute right-[2%] bottom-[6%] w-[40%] z-20
+           bg-white rounded-xl shadow-lg border border-gray-300 p-3
+           transition-all duration-700 ease-in-out"
+    :style="$clicks === 3 
+      ? 'opacity: 1; transform: translateY(0);' 
+      : 'opacity: 0; transform: translateY(20px);'"
+  >
+    <div class="text-sm font-semibold mb-1 text-center">
+      High entropy
+    </div>
+    <img
+      src="/high_entropy_session.svg"
+      class="w-full object-contain"
+    />
+  </div>
+
+</div>
+
+<!-- Final conclusion pop-out -->
+<div
+  v-if="$clicks >= 7"
+  class="absolute inset-0 flex items-center justify-center z-30 pointer-events-none"
+>
+<div
+  class="bg-white rounded-2xl shadow-2xl border border-gray-300 px-8 py-6 max-w-[700px]
+          text-center transition-all duration-700 ease-in-out"
+  :style="$clicks >= 7
+    ? 'opacity: 1; transform: scale(1);'
+    : 'opacity: 0; transform: scale(0.95);'"
+>
+  <div class="text-xl font-semibold mb-3">
+    Who is better at the task?
+  </div>
+
+  <div class="text-base leading-relaxed">
+    Monkeys and humans are more random than mice.<br/>
+    But the overall reward rate across all three species is similar.
+  </div>
+  </div>
 </div>
 
 
@@ -1616,7 +1683,7 @@ Mice are not as random when playing aganist another mouse
   <!-- ===================== -->
   <div
     class="absolute left-1/2 -translate-x-1/2 w-full grid grid-cols-3 gap-6 transition-all duration-700"
-    :class="$clicks >= 4 ? 'top-[40px]' : 'top-[160px]'"
+    :class="$clicks >= 4 ? 'top-[10px]' : 'top-[160px]'"
   >
 
   <!-- Panel 1 -->
@@ -1633,7 +1700,7 @@ Mice are not as random when playing aganist another mouse
   <!-- Panel 2 -->
   <div v-if="$clicks >= 2" class="flex flex-col items-center text-center">
     <div class="text-sm font-semibold mb-2">
-      Mouse vs Mouse 1st session
+      Mouse vs Mouse 2nd session
     </div>
     <img
       src="/J29_first_multi.svg"
@@ -1644,7 +1711,7 @@ Mice are not as random when playing aganist another mouse
   <!-- Panel 3 -->
   <div v-if="$clicks >= 3" class="flex flex-col items-center text-center">
     <div class="text-sm font-semibold mb-2">
-      Mouse vs Mouse 3rd session
+      Mouse vs Mouse 4th session
     </div>
     <img
       src="/J29_three_sessions_since_multi.svg"
@@ -1655,24 +1722,85 @@ Mice are not as random when playing aganist another mouse
   </div>
 
   <!-- ===================== -->
-  <!-- BOTTOM LEFT (CLICK 4) -->
+  <!-- BOTTOM LEFT (CLICK 5) -->
   <!-- ===================== -->
   <img
-    v-if="$clicks >= 5"
+    v-if="$clicks === 5"
     src="/J29_solo_to_multi_entropy.svg"
-    class="absolute left-[0%] bottom-[40%] w-[65%] object-contain transition-all duration-700"
+    class="absolute left-[-4%] bottom-[50%] w-[65%] object-contain transition-all duration-700"
   />
+
+  <img
+    v-if="$clicks === 6"
+    src="/J29_solo_to_multi_entropy_and_reward.svg"
+    class="absolute left-[-4%] bottom-[50%] w-[65%] object-contain transition-all duration-700"
+  />
+
+<!-- CONNECTION LINES -->
+<div v-if="$clicks >= 5" class="absolute inset-0 pointer-events-none z-10">
+
+  <!-- Line 1 -->
+  <div
+    class="absolute origin-left border-t-2 border-dashed transition-all duration-700 ease-in-out"
+    :class="$clicks >= 6 ? 'border-blue-600' : 'border-black'"
+    :style="$clicks >= 6
+      ? 'left: 10%; top: 18%; width: 13%; transform: rotate(78deg);'
+      : 'left: 10%; top: 18%; width: 8.21%; transform: rotate(71deg);'"
+  ></div>
+
+  <!-- Line 2 -->
+  <div
+    class="absolute origin-left border-t-2 border-dashed transition-all duration-700 ease-in-out"
+    :class="$clicks >= 6 ? 'border-blue-600' : 'border-black'"
+    :style="$clicks >= 6
+      ? 'left: 40%; top: 18%; width: 27.87%; transform: rotate(154.6deg);'
+      : 'left: 40%; top: 18%; width: 27%; transform: rotate(159.5deg);'"
+  ></div>
+
+  <!-- Line 3 -->
+  <div
+    class="absolute origin-left border-t-2 border-dashed transition-all duration-700 ease-in-out"
+    :class="$clicks >= 6 ? 'border-blue-600' : 'border-black'"
+    :style="$clicks >= 6
+      ? 'left: 68%; top: 18%; width: 52.6%; transform: rotate(168.9deg);'
+      : 'left: 68%; top: 18%; width: 53%; transform: rotate(167.8deg);'"
+  ></div>
+
+</div>
 
   <!-- ===================== -->
   <!-- BOTTOM RIGHT (CLICK 5) -->
   <!-- ===================== -->
+  <!-- Entropy label -->
+  <div
+    v-if="$clicks >= 5"
+    class="absolute right-[22%] bottom-[75%] text-[1rem] font-semibold bg-white/80 px-3 py-1 rounded-lg"
+  >
+    Entropy <br> decreases
+  </div>
+
+  <img
+    v-if="$clicks >= 5"
+    src="/mouse_solo_vs_social_entropy.svg"
+    class="absolute right-[19%] bottom-[47%] w-[20%] object-contain transition-all duration-700"
+  />
+
+  <!-- Reward label -->
+  <div
+    v-if="$clicks >= 6"
+    class="absolute right-[1%] bottom-[75%] text-[1rem] font-semibold text-blue-600 bg-white/80 px-3 py-1 rounded-lg" 
+  >
+    Reward rate <br> increases
+  </div>
+
   <img
     v-if="$clicks >= 6"
-    src="/mouse_solo_vs_social_entropy.svg"
-    class="absolute right-[10%] bottom-[45%] w-[20%] object-contain transition-all duration-700"
+    src="/mouse_solo_vs_social_reward.svg"
+    class="absolute right-[0%] bottom-[47%] w-[20%] object-contain transition-all duration-700"
   />
 
 </div>
+
 
 <!-- Bottom-left overview panel -->
 <div
@@ -1703,6 +1831,8 @@ Mice are not as random when playing aganist another mouse
   </div>
 
 </div>
+
+
 
 
 
@@ -1740,8 +1870,8 @@ Humans are also less random when playing against another human
   <!-- Bottom right (Click 3) -->
   <img
     v-click="3"
-    src="/human_solo_vs_social_reward_mp_vs_mp_sessions.svg"
-    class="absolute right-[20%] bottom-[43.4%] w-[31%] object-contain"
+    src="/human_solo_vs_social_reward_line_plot.svg"
+    class="absolute right-[25%] bottom-[43%] w-[25%] object-contain"
   />
 
   </div>
@@ -1928,13 +2058,24 @@ clicks: 7
 
 ---
 layout: side-title
-color: teal 
+color: light 
 transition: fade
 ---
 
 :: title :: 
 
 # Conclusion 
+
+<div class="flex flex-col items-center gap-4">
+  <h2> Part I </h2>
+  <img
+    src="/all_species_glm_hmm_weights_edited.svg"
+    class="w-[100%] object-contain"
+  />
+
+  <h2> Part II </h2>
+
+</div>
 
 :: content ::
 
