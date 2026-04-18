@@ -1906,6 +1906,106 @@ Humans are also less random when playing against another human
 
 
 
+---
+transition: fade
+layout: default
+---
+
+<h1 class="!text-[1.4rem] !leading-tight">
+Both humans and mice show increased adaptation to conspecific opponent
+</h1>
+
+
+
+<div class="relative w-full h-[720px]">
+
+
+  <!-- ===================== -->
+  <!-- LEFT COLUMN -->
+  <!-- ===================== -->
+  
+  <div v-click="1" class="absolute left-[0%] top-[24%] w-[40%]">
+  
+
+  <div class="text-[0.95rem] font-semibold text-gray-700 mb-10">
+    Logistic Regression Model
+  </div>
+
+
+  <!-- Equation -->
+  <div class="relative">
+
+
+$$
+P(y_t = 1) = \sigma\!\big(\beta_0 + \color{#2563eb}{\beta_1 o_{t-1} + \beta_2 o_{t-2} + \beta_3 o_{t-3}}\big)
+$$
+
+  <!-- ===================== -->
+  <!-- CALLOUTS -->
+  <!-- ===================== -->
+
+  <!-- P(y_t = 1) -->
+  <div class="absolute left-[2%] -top-[100%] text-[0.85rem] text-center">
+    <div>P(right)</div>
+    <div class="border-t-2 border-gray-600 w-20 mx-auto mb-1"></div>
+  </div>
+
+  <!-- beta0 -->
+  <div class="absolute left-[35%] top-[110%] text-[0.85rem] text-center">
+    <div class="border-t-2 border-gray-600 w-14 mx-auto mb-1"></div>
+    <div>bias</div>
+  </div>
+
+  <!-- opponent terms -->
+  <div class="absolute left-[53%] -top-[110%] text-[0.85rem] text-center text-blue-600">
+    <div>opponent choice history</div>
+    <div class="border-t-2 border-blue-600 w-55 mx-auto mb-1"></div>
+  </div>
+
+  <!-- small label for o -->
+  <div class="absolute left-[60%] top-[105%] text-[0.8rem] text-gray-600">
+    o = opponent choice
+  </div>
+
+</div>
+  </div>
+
+  <!-- ===================== -->
+  <!-- RIGHT COLUMN -->
+  <!-- ===================== -->
+  <div class="absolute right-[5%] top-[5%] w-[50%] flex flex-col gap-2">
+
+  <!-- Mouse row -->
+  <div v-click="2" class="grid grid-cols-[0.35fr_1fr] gap-5 items-center">
+    <img src="/mouse-1.svg" class="w-[70%] object-contain mx-auto" />
+    <img src="/mouse_logistic_regression_from_opponent_weights.svg" class="w-full object-contain" />
+  </div>
+
+  <!-- Human row -->
+  <div v-click="3" class="grid grid-cols-[0.35fr_1fr] gap-5 items-center">
+    <img src="/female-1.svg" class="w-[65%] object-contain mx-auto" />
+    <img src="/human_logistic_regression_from_opponent_weights.svg" class="w-full object-contain" />
+  </div>
+
+  </div>
+
+  <!-- ===================== -->
+  <!-- OVERVIEW PANEL -->
+  <!-- ===================== -->
+  <div class="absolute left-[1%] bottom-[1%] w-[18%] z-0">
+    <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+      <img src="/overview-cartoon.svg" class="w-full object-contain" />
+
+  <div class="absolute inset-y-0 left-27 w-38% border-2 border-blue-500 rounded-lg-l pointer-events-none"></div>
+  <div class="absolute inset-y-0 left-0 w-62% bg-white/45 pointer-events-none"></div>
+  </div>
+  </div>
+
+</div>
+
+
+
+
 
 ---
 transition: fade
@@ -1917,7 +2017,7 @@ clicks: 7
 
 <div class="mt-6 space-y-3">
   <div v-click="1" class="text-lg">
-  Question: How does an individuals training history shape their subsequent strategy?
+  Question: How does an individuals training history shape their <br> subsequent strategy and adpatation to their opponent?
   </div>
 </div>
 
@@ -2064,9 +2164,11 @@ transition: fade
 
 :: title :: 
 
-# Conclusion 
+<div class="w-full text-left">
+  <h1 class="!text-left">Conclusion</h1>
+</div>
 
-<div class="flex flex-col items-center gap-4">
+<div class="flex flex-col items-center gap-0">
   <h2> Part I </h2>
   <img
     src="/all_species_glm_hmm_weights_edited.svg"
@@ -2075,22 +2177,30 @@ transition: fade
 
   <h2> Part II </h2>
 
+  <img
+    src="/mouse-human-entropy-reward-beta-summary.svg"
+    class="w-[100%] object-contain -mt-3"
+  />
+
 </div>
 
 :: content ::
 
-<div style="transform: translateY(3vh)">
+<div style="transform: translateY(1vh)">
 
 <v-clicks :every="2">
 
-<p class="text-lg font-semibold italic text-teal-600">What are the behavioural strategies used by mice in a game of matching pennies against a competitive opponent?</p>
-<p class="text-base text-gray-700 mb-4 ml-4">Mice exhibit bias and stochastic states. Within a session, bias states are more likely to occur in the beginning and end of a session. Across learning, mice are more likely to be in the stochastic state.</p>
+<p class="text-lg font-semibold italic text-teal-600">1 | What are the behavioural strategies used by mice, monkeys and humans in a game of matching pennies against a competitive opponent?</p>
 
-<p class="text-lg font-semibold italic text-teal-600">How does this behaviour differ in humans and monkeys?</p>
-<p class="text-base text-gray-700 mb-4 ml-4">Monkeys maintain in the stochastic state more consistently. Whereas humans tend to first use a win-stay strategy followed by a mix of strategies</p>
+- Across species, behaviour converges toward stochastic strategies under competition
+- But they reach this behaviour in different ways; mice start with simple biased strategies, whereas humans use more sophisticated reward-guided strategies
 
-<p class="text-lg font-semibold italic text-teal-600">Do we observed a change in behaviour when switching from playing against a computer to player against a conspecific?</p>
-<p class="text-base text-gray-700 ml-4">Preliminary results suggest that individuals reduce their stochasticity when playing against a conspecific opponent, presumably because there is lower competitive pressure to randomise</p>
+
+<p class="text-lg font-semibold italic text-teal-600">2 | Do we observed a change in behaviour when switching from playing against a computer to player against a conspecific?</p>
+
+- Both mice and human become less random when playing against a conspecific
+- But reward rates are increased and behaviour appears to be adaptive
+
 
 </v-clicks>
 
@@ -2122,10 +2232,19 @@ class: p-0 m-0
   </div>
 
 <!-- Joanna -->
+<div class="absolute bottom-80 right-105">
+  <div class="px-5 py-2 rounded-lg bg-black/25 backdrop-blur-sm">
+    <h2 class="text-lg font-semibold text-white/100 text-center">
+      Ann Duan <br>Supervision
+    </h2>
+  </div>
+</div>
+
+<!-- Joanna -->
 <div class="absolute bottom-70 right-40">
   <div class="px-5 py-2 rounded-lg bg-black/25 backdrop-blur-sm">
     <h2 class="text-lg font-semibold text-white/100 text-center">
-      Joanna <br>Mouse MP
+      Joanna Aloor <br>Mouse MP
     </h2>
   </div>
 </div>
@@ -2134,7 +2253,25 @@ class: p-0 m-0
 <div class="absolute bottom-30 left-65">
   <div class="px-5 py-2 rounded-lg bg-black/25 backdrop-blur-sm">
     <h2 class="text-lg font-semibold text-white/100 text-center">
-      Mehul <br> Mouse vs Mouse
+      Mehul Ristogi <br> Mouse vs Mouse
+    </h2>
+  </div>
+</div>
+
+
+<!-- Julia headshot -->
+<div class="absolute bottom-10 left-42.5 flex justify-center">
+  <img
+    src="/julia-head.jpg"
+    class="w-20 h-20 rounded-full object-cover border-2 border-white shadow-md"
+  />
+</div>
+
+<!-- Julia -->
+<div class="absolute bottom-10 left-65">
+  <div class="px-5 py-2 rounded-lg bg-black/25 backdrop-blur-sm">
+    <h2 class="text-lg font-semibold text-white/100 text-center">
+      Julia Nicklaus <br> Human MP
     </h2>
   </div>
 </div>
@@ -2145,54 +2282,22 @@ class: p-0 m-0
   <div class="px-3 py-2 rounded-lg bg-black/20 backdrop-blur-sm">
     
   <div class="text-xs font-bold text-white/80 mb-1">
-    Human Pilots
+    Many others!
   </div>
 
   <div class="text-xs text-white/80 leading-snug space-y-0.5">
+    <div>Jo Warren</div>
+    <div>Joseph Tutt</div>
+    <div>Ivana Orsolic</div>
     <div>George Booth</div>
     <div>Betty C</div>
-    <div>Person 3</div>
-    <div>Person 4</div>
-    <div>Person 5</div>
-    <div>Person 6</div>
-    <div>Person 7</div>
-    <div>Person 8</div>
-    <div>Person 9</div>
+    <div>Carolina</div>
+    <div>...</div>
   </div>
 
   </div>
 </div>
 
 </div>
-
-
-
-
----
-transition: fade
----
-
-# Why not just have the mouse play a computer?
-
-
-- One scientific question we have is what is the statistics of choices of two mice playing each other, and it is hard to know a priori what model can recreate mouse-like behaviour 
-- if we have a good model of how mice adapt to the choice statistics of another mouse, then we can indeed have the mouse play against a simulated mouse opponent. We can even test if it is indeed a good model by comparing mouse vs mouse and mouse vs simulated mouse behaviour
-
----
-transition: fade
----
-
-# Isn't this just some form of two-armed bandit task?
-
-
-
-
----
-transition: fade
----
-
-# What can we learn from simultaneous recordings across animals?
-
-
 
 
