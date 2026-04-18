@@ -611,7 +611,7 @@ layout: default
   </li>
 
   <li v-click="3">
-    Algorithm 1: chooses based on stored choice history <br> (sequences of length 1- 4)
+    Algorithm 1: chooses based on stored choice history <br> (sequences of length 1 - 4)
   </li>
 
   <li v-click="4">
@@ -809,7 +809,7 @@ columns: is-5
 ---
 transition: fade
 layout: default
-clicks: 6
+clicks: 7
 ---
 
 <h1 class="!text-[1.4rem] !leading-tight">
@@ -828,6 +828,8 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
       : $clicks === 2
       ? 'top: 5%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 3
+      ? 'top: 5%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : $clicks === 4
       ? 'top: 0%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 58%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
@@ -841,8 +843,10 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
       : $clicks === 2
       ? 'top: 30%; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 3
-      ? 'top: 24%; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 30%; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks === 4
+      ? 'top: 24%; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : $clicks === 5
       ? 'top: 40px; width: 70%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 52%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
@@ -853,7 +857,7 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
     class="absolute left-[55%] -translate-x-1/2 transition-all duration-700 ease-in-out z-2"
     :style="$clicks < 3
       ? 'top: 55%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : $clicks === 3
+      : $clicks === 4
       ? 'top: 43%; width: 90%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 50%; width: 55%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
@@ -862,9 +866,9 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
   <img
     src="/monkey_state_weights_colored.svg"
     class="absolute left-[49%] -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 4
+    :style="$clicks < 5
       ? 'top: 24%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : $clicks === 4
+      : $clicks === 5
       ? 'top: 24%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 2%; width: 60%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
@@ -873,7 +877,7 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
   <img
     src="/monkey_state_per_session_summary.svg"
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 5
+    :style="$clicks < 6
       ? 'top: 30%; width: 80%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
       : 'top: 30%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
@@ -883,7 +887,7 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
 
 
 <!-- Algorithm labels -->
-<div v-if="$clicks === 4" class="absolute inset-0 pointer-events-none">
+<div v-if="$clicks === 5" class="absolute inset-0 pointer-events-none">
 
   <!-- Algorithm 0 -->
   <div class="absolute top-[15%] left-[27%] text-[1.1rem] font-semibold text-[#2ca6a4ff]">
@@ -898,6 +902,120 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
   <!-- Algorithm 2 -->
   <div class="absolute top-[15%] left-[67%] text-[1.1rem] font-semibold text-[#4f6db8ff]">
     Algorithm 2
+  </div>
+
+</div>
+
+
+<!-- Win-stay / Lose-switch arrows -->
+<div v-if="$clicks === 3 " class="absolute inset-0 pointer-events-none z-10">
+
+  <svg class="w-full h-full overflow-visible">
+    <defs>
+      <marker
+        id="arrowhead"
+        markerWidth="8"
+        markerHeight="6"
+        refX="6"
+        refY="3"
+        orient="auto"
+      >
+        <polygon points="0 0, 8 3, 0 6" fill="black" />
+      </marker>
+    </defs>
+
+  <!-- Win-stay -->
+  <line
+    x1="40%" y1="85%"
+    x2="43%" y2="79%"
+    stroke="black"
+    stroke-width="2"
+    marker-end="url(#arrowhead)"
+    class="arrow-draw"
+    style="animation-delay: 0s;"
+  />
+
+  <!-- Lose-switch -->
+  <line
+    x1="55%" y1="50%"
+    x2="49%" y2="54%"
+    stroke="black"
+    stroke-width="2"
+    marker-end="url(#arrowhead)"
+    class="arrow-draw"
+    style="animation-delay: 0.35s;"
+  />
+  </svg>
+
+  <!-- Labels -->
+  <div
+    class="absolute left-[39.9%] -translate-x-1/2 top-[84%] text-[1.1rem] font-semibold label-pop"
+    style="animation-delay: 1.0s;"
+  >
+    Win-stay
+  </div>
+
+  <div
+    class="absolute left-[60.5%] -translate-x-1/2 top-[48%] text-[1.1rem] font-semibold label-pop"
+    style="animation-delay: 1.0s;"
+  >
+    Lose-switch
+  </div>
+
+</div>
+
+<style>
+.arrow-draw {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw-arrow 0.45s ease-out forwards;
+}
+
+.label-pop {
+  opacity: 0;
+  animation: pop-label 0.3s ease-out forwards;
+}
+
+@keyframes draw-arrow {
+  from {
+    stroke-dashoffset: 100;
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes pop-label {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+</style>
+
+
+<!-- Conclusion note -->
+<div
+  v-if="$clicks === 7"
+  class="absolute bottom-[30%] left-1/2 -translate-x-1/2 w-[48%] 
+         rounded-xl bg-purple-100/90 backdrop-blur-sm 
+         border border-purple-300 shadow-md 
+         px-6 py-4 text-center transition-all duration-500"
+>
+
+  <div class="text-[1.05rem] font-semibold text-purple-800 mb-1">
+    Monkey matching pennies
+  </div>
+
+  <div class="text-[0.98rem] text-gray-800 leading-snug">
+    GLM-HMM captures dynamic changes in behavioural strategy across time 
+    and reveals systematic adaptations to different computer opponents
   </div>
 
 </div>
@@ -1061,11 +1179,11 @@ clicks: 6
   <img
     src="/human-vs-algorithm-2-v2.svg"
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out -mt-10"
-    :style="$clicks === 1
+    :style="$clicks <= 1
       ? 'top: 90px; width: 34%; opacity: 1; transform: translateX(-50%) scale(1);'
       : $clicks <= 3
       ? 'top: 5%; width: 26%; opacity: 1; transform: translateX(-50%) scale(1);'
-      : 'top: 0%; width: 26%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
+      : 'top: 90px; width: 26%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
 
   <!-- Purple note -->
@@ -1535,7 +1653,7 @@ layout: default
   <!-- Emphasize -->
   <div
     v-if="$clicks >= 2"
-    class="absolute inset-y-0 left-122 w-50% border-3 border-blue-500 rounded-lg-l pointer-events-none"
+    class="absolute inset-y-0 left-122 w-37.6% border-3 border-blue-500 rounded-r-lg pointer-events-none"
   ></div>
 
   <!-- de-emphasis -->
@@ -1890,7 +2008,7 @@ Humans are also less random when playing against another human
 
   <!-- Emphasize -->
   <div
-    class="absolute inset-y-0 left-34.5 w-21% border-2 border-blue-500 rounded-lg-l pointer-events-none"
+    class="absolute inset-y-0 left-34.5 w-21% border-2 border-blue-500 rounded-r-lg pointer-events-none"
   ></div>
 
 
