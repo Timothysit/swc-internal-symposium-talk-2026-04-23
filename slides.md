@@ -340,27 +340,28 @@ Rock paper scissors as a way of studying strategic stochasticity
   <!-- RIGHT COLUMN -->
   <div
     v-if="$clicks >= 6"
-    class="absolute top-[50px] right-[2%] w-[26%] flex flex-col items-center text-center transition-all duration-700"
+    class="absolute top-[50px] right-[2%] w-[30%] flex flex-col items-center text-center transition-all duration-700"
   >
     <div class="text-sm font-semibold leading-snug max-w-xs mb-3">
-      Elite tennis players achieve equilibrium outcomes despite slight deviations from randomness
+      In penalty kicks, elite athletes behave like game-theoretic randomisers
     </div>
 
   <div class="flex flex-col items-center gap-3">
     <img
-      src="/pacific-blue-eye.jpg"
-      class="h-32 object-contain rounded-lg"
+      src="/kicker-goalkeeper-table.png"
+      class="h-10 object-contain rounded-lg"
     />
     <img
-      src="/blue-eye-fish-entropy.png"
-      class="h-32 object-contain rounded-lg"
+      src="/wikihow-penalty-kick-blind.jpeg"
+      class="h-50 object-contain rounded-lg"
     />
+
   </div>
 
   <div class="text-xs leading-snug italic max-w-xs mt-3">
-    Walker and Wooders 2001<br>
+   Palacios-Huerta 2003<br>
     <span class="not-italic">
-      Minimax Play at Wimbledon
+      Professionals Play Minimax
     </span>
   </div>
   </div>
