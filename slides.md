@@ -43,48 +43,61 @@ mdc: true
 ---
 transition: fade
 layout: default
-clicks: 6
+clicks: 7
 ---
 
 # Think of decision-making as games and agents
 
 <div class="grid grid-cols-3 gap-8 w-full mt-2 items-start">
 
-  <!-- Top gradient: increasing left -> right -->
-  <div class="absolute top-20 left-0 w-full h-8 pointer-events-none z-0">
-    <div class="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-300 to-gray-600 opacity-40 clip-agent-top"></div>
-    <div class="absolute right-2 -top-10 text-2xl font-medium">
-      Interactiveness
-    </div>
-  </div>
+<!-- Top gradient: LEFT -> RIGHT -->
+<div class="absolute top-20 left-0 w-full h-8 pointer-events-none z-0">
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-300 to-gray-600 opacity-40 clip-agent-top origin-left transition-transform duration-2000 ease-out"
+    :class="$clicks >= 1 ? 'scale-x-100' : 'scale-x-0'"
+  ></div>
 
-  <!-- Bottom gradient: decreasing left -> right -->
-  <div class="absolute top-60 left-0 w-full h-8 pointer-events-none z-0">
-    <div class="absolute inset-0 bg-gradient-to-r from-gray-600 via-gray-300 to-gray-100 opacity-70 clip-agent-bottom"></div>
-    <div class="absolute left-2 top-0 text-2xl font-medium">
-      Experimental control
-    </div>
+  <div
+    class="absolute right-2 -top-10 text-2xl font-medium transition-opacity duration-500"
+    :class="$clicks >= 1 ? 'opacity-100' : 'opacity-0'"
+  >
+    Interactiveness
   </div>
+</div>
 
+<!-- Bottom gradient: RIGHT -> LEFT -->
+<div class="absolute top-60 left-0 w-full h-8 pointer-events-none z-0">
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-gray-600 via-gray-300 to-gray-100 opacity-70 clip-agent-bottom origin-right transition-transform duration-2000 ease-out"
+    :class="$clicks >= 1 ? 'scale-x-100' : 'scale-x-0'"
+  ></div>
+
+  <div
+    class="absolute left-2 top-0 text-2xl font-medium transition-opacity duration-500"
+    :class="$clicks >= 1 ? 'opacity-100' : 'opacity-0'"
+  >
+    Experimental control
+  </div>
+</div>
 
   <!-- Column 1 -->
   <div class="flex flex-col items-center text-center">
     <div
-      v-if="$clicks >= 1"
-      class="text-2xl font-semibold mb-4"
+      v-if="$clicks >= 2"
+      class="text-2xl font-semibold mb-4 z-10"
     >
       Slot Machine
     </div>
 
   <img
-    v-if="$clicks >= 1"
+    v-if="$clicks >= 2"
     src="/slow-machine-v2.png"
     class="w-full max-w-[85%] object-contain -mt-10"
   />
 
   <!-- Extra slot-machine details only on click 2 -->
   <div
-    v-if="$clicks >= 2"
+    v-if="$clicks >= 3"
     class="mt-6 flex flex-col items-center"
   >
     <img
@@ -95,7 +108,7 @@ clicks: 6
   </div>
 
   <div
-    v-if="$clicks >= 2"
+    v-if="$clicks >= 3"
     class="mt-0 text-sm italic leading-snug max-w-[90%]"
   >
   <div class="flex items-center justify-center gap-4 mb-3 -mt-3">
@@ -136,8 +149,8 @@ clicks: 6
   <!-- Column 2 placeholder until click 4 -->
   <div class="flex flex-col items-center text-center">
 
-  <template v-if="$clicks >= 5">
-    <div class="text-2xl font-semibold mb-4">
+  <template v-if="$clicks >= 6">
+    <div class="text-2xl font-semibold mb-4 z-10">
       Rock paper scissors
     </div>
     <img
@@ -146,7 +159,7 @@ clicks: 6
     />
   </template>
   <div
-      v-if="$clicks >= 6"
+      v-if="$clicks >= 7"
       class="mt-0 text-sm italic leading-snug max-w-[90%]"
     >
   <div class="flex items-center justify-center gap-4 mb-3 mt-5">
@@ -185,8 +198,8 @@ clicks: 6
 
   <!-- Column 3 -->
   <div class="flex flex-col items-center text-center">
-    <template v-if="$clicks >= 3">
-      <div class="text-2xl font-semibold mb-4">
+    <template v-if="$clicks >= 4">
+      <div class="text-2xl font-semibold mb-4 z-10">
         Foraging competition
       </div>
       <img
@@ -195,7 +208,7 @@ clicks: 6
       />
     </template>
     <div
-      v-if="$clicks >= 4"
+      v-if="$clicks >= 5"
       class="mt-0 text-sm italic leading-snug max-w-[90%]"
     >
     <div class="flex items-center justify-center gap-4 mb-3 mt-4">
@@ -470,7 +483,7 @@ clicks: 13
 ---
 transition: fade
 layout: side-title
-clicks: 5
+clicks: 3
 ---
 
 :: title :: 
@@ -494,7 +507,7 @@ clicks: 5
 
   <!-- Highlight right half for question 3 -->
   <div
-    v-if="$clicks === 3"
+    v-if="$clicks === 2"
     class="absolute inset-y-0 right-0 w-37% border-4 border-red-500 rounded-r-lg pointer-events-none"
   ></div>
 
@@ -505,20 +518,20 @@ clicks: 5
   ></div>
 
   <div
-    v-if="$clicks === 3"
+    v-if="$clicks === 2"
     class="absolute inset-y-0 left-0 w-63% bg-white/55 pointer-events-none"
   ></div>
   </div>
 
   <!-- Highlight left half for question 1 -->
   <div
-    v-if="$clicks === 4"
+    v-if="$clicks === 3"
     class="absolute inset-y-0 left-0 w-63% border-4 border-blue-500 rounded-l-lg pointer-events-none"
   ></div>
 
   <!-- Optional de-emphasis of the non-highlighted half -->
   <div
-    v-if="$clicks === 4"
+    v-if="$clicks === 3"
     class="absolute inset-y-0 right-0 w-37% bg-white/55 pointer-events-none"
   ></div>
 
@@ -531,20 +544,19 @@ clicks: 5
 
 
 
-
-<div class="space-y-6 mt-10">
+<div class="space-y-6 mt-30">
 
   <v-click>
 
-  <div :class="$clicks >= 4 ? 'opacity-100' : ''">
+  <div :class="$clicks >= 3 ? 'opacity-100' : ''">
     <div 
       class="text-lg transition-all duration-500"
-      :class="$clicks >= 4 ? 'text-black-500 font-semibold' : ''"
+      :class="$clicks >= 3 ? 'text-black-500 font-semibold' : ''"
     >
       1. What are the behavioural strategies used by mice in a game of matching pennies against an opponent with a stationary strategy? How does it differ in humans and monkeys?
     </div>
     <div class="text-sm italic mt-1 ml-4 transition-all duration-500"
-         :class="$clicks >= 4 ? 'opacity-90' : 'opacity-70'">
+         :class="$clicks >= 3 ? 'opacity-90' : 'opacity-70'">
       Aloor* & Sit* et al. Strategic stochasticity in mice and monkeys (in prep)
     </div>
   </div>
@@ -553,22 +565,9 @@ clicks: 5
 
   <v-click>
 
-  <div :class="$clicks >= 4 ? 'opacity-30' : ''">
+  <div :class="$clicks >= 3 ? 'opacity-100' : ''">
     <div class="text-lg transition-all duration-500">
-      2. Can we find neural signatures of different behavioural strategies, such as differences in reward signalling?
-    </div>
-    <div class="text-sm italic opacity-70 mt-1 ml-4">
-      Aloor* & Sit* et al. Distinct neuromodulatory contributions to strategic decisions in a competitive multi-player game (in prep)
-    </div>
-  </div>
-
-  </v-click>
-
-  <v-click>
-
-  <div :class="$clicks >= 4 ? 'opacity-100' : ''">
-    <div class="text-lg transition-all duration-500">
-      3. Do mice and humans change their strategy when playing against a conspecific, where the strategies of the opponent is no longer stationary?
+      2. Do mice and humans change their strategy when playing against a conspecific, where the strategies of the opponent is no longer stationary?
     </div>
     <div class="text-sm italic opacity-70 mt-1 ml-4">
       Ongoing project
@@ -1015,7 +1014,7 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
   </div>
 
   <div class="text-[0.98rem] text-gray-800 leading-snug">
-    GLM-HMM captures dynamic changes in behavioural strategy across time 
+    GLM-HMM captures changes in behavioural strategy across time 
     and reveals systematic adaptations to different computer opponents
   </div>
 
@@ -1049,7 +1048,7 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
 
 ---
 transition: fade
-clicks: 5
+clicks: 6
 ---
 
 
@@ -1138,6 +1137,27 @@ clicks: 5
 </div>
 
 
+<!-- Conclusion note -->
+<div
+  v-if="$clicks === 6"
+  class="absolute bottom-[45%] left-1/2 -translate-x-1/2 w-[48%] 
+         rounded-xl bg-purple-100/90 backdrop-blur-sm 
+         border border-purple-300 shadow-md 
+         px-6 py-4 text-center transition-all duration-500"
+>
+
+  <div class="text-[1.05rem] font-semibold text-purple-800 mb-1">
+    Mouse matching pennies
+  </div>
+
+  <div class="text-[0.98rem] text-gray-800 leading-snug">
+   Mice learn to become unpredictable by shifting from biased to stochastic strategies
+  </div>
+
+</div>
+
+
+
 <!-- Bottom-left overview panel -->
 <div
   class="absolute left-[1%] bottom-[2%] w-[18%] z-0"
@@ -1168,7 +1188,7 @@ clicks: 5
 ---
 transition: fade
 layout: default
-clicks: 6
+clicks: 8
 ---
 
 # Humans alternate between win-stay and win-switch states
@@ -1267,6 +1287,16 @@ clicks: 6
       ? 'top: 30%; width: 80%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
       : 'top: 25%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
+  
+  <!-- Highlight early and late session -->
+  <div
+    class="absolute top-26% h-[21%] w-[32%] bg-black/12 transition-all duration-700 ease-in-out pointer-events-none"
+    :style="$clicks < 6
+      ? 'left: 23.5%; opacity: 0; transform: scaleX(0); transform-origin: left;'
+      : $clicks === 6
+      ? 'left: 23.5%; opacity: 0.4; transform: scaleX(1); transform-origin: left;'
+      : 'left: 54%; opacity: 0.4; transform: scaleX(1); transform-origin: left;'"
+  ></div>
 
   </div>
 </div>
@@ -1274,7 +1304,7 @@ clicks: 6
 
 <!-- Conclusion note -->
 <div
-  v-click="6"
+  v-click="8"
   class="absolute left-[35%] bottom-[30%] max-w-[32%]
          bg-purple-100 border border-purple-300
          rounded-xl px-5 py-4 shadow-md
@@ -1329,7 +1359,7 @@ clicks: 6
 
 ---
 transition: fade
-clicks: 7
+clicks: 9
 ---
 
 <h1 class="!text-[1.5orem] !leading-tight">
@@ -1359,7 +1389,7 @@ Cross-species differences in strategic stochasticity
   </div>
 
 <!-- Column 2 -->
-<div v-click="2" class="flex flex-col items-center text-center">
+<div v-click="4" class="flex flex-col items-center text-center">
   <div class="text-lg font-semibold leading-snug mb-4">
     Entropy correlates with P(stochastic)
   </div>
@@ -1372,9 +1402,9 @@ Cross-species differences in strategic stochasticity
 
   </div>
 
-  <!-- Column 3, click 4 -->
+  <!-- Column 3, click 6 -->
   <div
-    v-if="$clicks === 4"
+    v-if="$clicks === 6"
     class="flex flex-col items-center text-center"
   >
     <div class="text-lg font-semibold leading-snug mb-4">
@@ -1386,9 +1416,9 @@ Cross-species differences in strategic stochasticity
     />
   </div>
 
-  <!-- Column 3, click 5 -->
+  <!-- Column 3, click 7 -->
   <div
-    v-if="$clicks === 5"
+    v-if="$clicks === 7"
     class="flex flex-col items-center text-center"
   >
     <div class="text-lg font-semibold leading-snug mb-4">
@@ -1400,9 +1430,9 @@ Cross-species differences in strategic stochasticity
     />
   </div>
 
-  <!-- Column 3, click 6 -->
+  <!-- Column 3, click 8 -->
   <div
-    v-if="$clicks >= 6"
+    v-if="$clicks >= 8"
     class="flex flex-col items-center text-center"
   >
     <div class="text-lg font-semibold leading-snug mb-4">
@@ -1419,14 +1449,14 @@ Cross-species differences in strategic stochasticity
 </div>
 
 <!-- Entropy example overlays -->
-<div v-if="$clicks === 3">
+<div v-if="$clicks === 5">
 
   <!-- Left: Low entropy -->
   <div
     class="absolute left-[2%] bottom-[6%] w-[40%] z-20
            bg-white rounded-xl shadow-lg border border-gray-300 p-3
            transition-all duration-700 ease-in-out"
-    :style="$clicks === 3 
+    :style="$clicks === 5 
       ? 'opacity: 1; transform: translateY(0);' 
       : 'opacity: 0; transform: translateY(20px);'"
   >
@@ -1444,7 +1474,7 @@ Cross-species differences in strategic stochasticity
     class="absolute right-[2%] bottom-[6%] w-[40%] z-20
            bg-white rounded-xl shadow-lg border border-gray-300 p-3
            transition-all duration-700 ease-in-out"
-    :style="$clicks === 3 
+    :style="$clicks === 5
       ? 'opacity: 1; transform: translateY(0);' 
       : 'opacity: 0; transform: translateY(20px);'"
   >
@@ -1461,13 +1491,13 @@ Cross-species differences in strategic stochasticity
 
 <!-- Final conclusion pop-out -->
 <div
-  v-if="$clicks >= 7"
+  v-if="$clicks >= 9"
   class="absolute inset-0 flex items-center justify-center z-30 pointer-events-none"
 >
 <div
   class="bg-white rounded-2xl shadow-2xl border border-gray-300 px-8 py-6 max-w-[700px]
           text-center transition-all duration-700 ease-in-out"
-  :style="$clicks >= 7
+  :style="$clicks >= 9
     ? 'opacity: 1; transform: scale(1);'
     : 'opacity: 0; transform: scale(0.95);'"
 >
@@ -1480,6 +1510,89 @@ Cross-species differences in strategic stochasticity
     But the overall reward rate across all three species is similar.
   </div>
   </div>
+</div>
+
+
+<!-- Bottom-left arrows -->
+<div
+  v-if="$clicks >= 2 && $clicks <= 3"
+  class="absolute left-[9%] bottom-[7%] w-[28%] h-[22%] z-30 pointer-events-none"
+>
+  <svg class="w-full h-full overflow-visible" viewBox="0 0 500 250">
+    <defs>
+      <marker
+        id="arrowhead-brown"
+        markerWidth="5"
+        markerHeight="5"
+        refX="4"
+        refY="2.5"
+        orient="auto"
+        markerUnits="strokeWidth"
+      >
+        <path d="M0,0 L5,2.5 L0,5 z" fill="#8b5e3c" />
+      </marker>
+    </defs>
+
+  <!-- Brown arrow group -->
+  <g
+    class="transition-all duration-700 ease-in-out"
+    :style="$clicks >= 3
+      ? 'transform: translate(0px, -110px) rotate(-90deg); transform-origin: 200px -80px;'
+      : 'transform: translate(0px, 0px) rotate(0deg); transform-origin: 200px -80px;'"
+  >
+    <line
+      x1="240"
+      y1="0"
+      x2="200"
+      y2="-80"
+      stroke="#8b5e3c"
+      stroke-width="6"
+      stroke-linecap="round"
+      marker-end="url(#arrowhead-brown)"
+    />
+  </g>
+  </svg>
+</div>
+
+
+<div
+  v-if="$clicks >= 2 && $clicks <= 3"
+  class="absolute left-[20%] bottom-[5%] w-[28%] h-[22%] z-30 pointer-events-none"
+>
+  <svg class="w-full h-full overflow-visible" viewBox="0 0 500 250">
+    <defs>
+      <marker
+        id="arrowhead-gray"
+        markerWidth="5"
+        markerHeight="5"
+        refX="4"
+        refY="2.5"
+        orient="auto"
+        markerUnits="strokeWidth"
+      >
+        <path d="M0,0 L5,2.5 L0,5 z" fill="#6b7280" />
+      </marker>
+    </defs>
+
+  <!-- Gray arrow group -->
+  <g
+    class="transition-all duration-700 ease-in-out"
+    :style="$clicks >= 3
+      ? 'transform: translate(5px, -110px) rotate(-90deg); transform-origin: 220px -60px;'
+      : 'transform: translate(0px, 0px) rotate(0deg); transform-origin: 220px -60px;'"
+  >
+    <line
+      x1="260"
+      y1="10"
+      x2="220"
+      y2="-60"
+      stroke="#6b7280"
+      stroke-width="6"
+      stroke-linecap="round"
+      marker-end="url(#arrowhead-gray)"
+    />
+  </g>
+  </svg>
 </div>
 
 
@@ -1974,21 +2087,28 @@ Humans are also less random when playing against another human
 
   <!-- Top image (Click 1) -->
   <img
-    v-click="1"
+    v-if="$clicks === 1"
+    src="/eoo9vmxk_choices_reward_and_entropy.svg"
+    class="absolute left-1/2 -translate-x-1/2 top-[0%] w-[70%] object-contain"
+  />
+
+
+  <img
+    v-click="2"
     src="/example_human_MP_vs_MP_choices_and_highlight.svg"
     class="absolute left-1/2 -translate-x-1/2 top-[0%] w-[70%] object-contain"
   />
 
   <!-- Bottom left (Click 2) -->
   <img
-    v-click="2"
+    v-click="3"
     src="/human_solo_vs_social_entropy_line_plot.svg"
     class="absolute left-[25%] bottom-[43%] w-[25%] object-contain"
   />
 
   <!-- Bottom right (Click 3) -->
   <img
-    v-click="3"
+    v-click="4"
     src="/human_solo_vs_social_reward_line_plot.svg"
     class="absolute right-[25%] bottom-[43%] w-[25%] object-contain"
   />
@@ -2028,40 +2148,30 @@ Humans are also less random when playing against another human
 ---
 transition: fade
 layout: default
+clicks: 5
 ---
 
 <h1 class="!text-[1.4rem] !leading-tight">
 Both humans and mice show increased adaptation to conspecific opponent
 </h1>
 
-
-
 <div class="relative w-full h-[720px]">
-
 
   <!-- ===================== -->
   <!-- LEFT COLUMN -->
   <!-- ===================== -->
-  
-  <div v-click="1" class="absolute left-[0%] top-[24%] w-[40%]">
-  
+  <div class="absolute left-[0%] top-[24%] w-[40%]">
 
   <div class="text-[0.95rem] font-semibold text-gray-700 mb-10">
     Logistic Regression Model
   </div>
 
+  <!-- Equation 1: opponent history -->
+  <div v-if="$clicks <= 3" class="relative">
 
-  <!-- Equation -->
-  <div class="relative">
-
-
-$$
-P(y_t = 1) = \sigma\!\big(\beta_0 + \color{#2563eb}{\beta_1 o_{t-1} + \beta_2 o_{t-2} + \beta_3 o_{t-3}}\big)
-$$
-
-  <!-- ===================== -->
-  <!-- CALLOUTS -->
-  <!-- ===================== -->
+  $$
+  P(y_t = 1) = \sigma\!\big(\beta_0 + \color{#2563eb}{\beta_1 o_{t-1} + \beta_2 o_{t-2} + \beta_3 o_{t-3}}\big)
+  $$
 
   <!-- P(y_t = 1) -->
   <div class="absolute left-[2%] -top-[100%] text-[0.85rem] text-center">
@@ -2085,8 +2195,47 @@ $$
   <div class="absolute left-[60%] top-[105%] text-[0.8rem] text-gray-600">
     o = opponent choice
   </div>
+  </div>
 
-</div>
+  <!-- Equation 2: WSLS style -->
+  <div v-if="$clicks >= 4" class="relative">
+
+  $$
+  P(y_t = 1) = \sigma\!\big(\beta_0 + \color{#2563eb}{\beta_1 y_{t-1} r_{t-1} + \beta_2 y_{t-1}(1-r_{t-1})}\big)
+  $$
+
+  <!-- P(y_t = 1) -->
+  <div class="absolute left-[2%] -top-[100%] text-[0.85rem] text-center">
+    <div>P(right)</div>
+    <div class="border-t-2 border-gray-600 w-20 mx-auto mb-1"></div>
+  </div>
+
+  <!-- beta0 -->
+  <div class="absolute left-[38%] top-[110%] text-[0.85rem] text-center">
+    <div class="border-t-2 border-gray-600 w-6 mx-auto mb-1"></div>
+    <div>bias</div>
+  </div>
+
+  <!-- reward dependent terms -->
+  <div class="absolute left-[52%] -top-[110%] text-[0.85rem] text-center text-blue-600">
+    <div>Win-Stay</div>
+    <div class="border-t-2 border-blue-600 w-24 mx-auto mb-1"></div>
+  </div>
+
+  <div class="absolute left-[87%] -top-[110%] text-[0.85rem] text-center text-blue-600">
+    <div>Lose-switch</div>
+    <div class="border-t-2 border-blue-600 w-34 mx-auto mb-1"></div>
+  </div>
+
+  <!-- small labels -->
+  <div class="absolute left-[54%] top-[105%] text-[0.8rem] text-gray-600">
+    y = animal choice
+  </div>
+  <div class="absolute left-[54%] top-[170%] text-[0.8rem] text-gray-600">
+    r = reward
+  </div>
+  </div>
+
   </div>
 
   <!-- ===================== -->
@@ -2094,16 +2243,28 @@ $$
   <!-- ===================== -->
   <div class="absolute right-[5%] top-[5%] w-[50%] flex flex-col gap-2">
 
-  <!-- Mouse row -->
-  <div v-click="2" class="grid grid-cols-[0.35fr_1fr] gap-5 items-center">
+  <!-- Mouse row: original -->
+  <div v-if="$clicks <= 3" v-click="2" class="grid grid-cols-[0.35fr_1fr] gap-5 items-center">
     <img src="/mouse-1.svg" class="w-[70%] object-contain mx-auto" />
     <img src="/mouse_logistic_regression_from_opponent_weights.svg" class="w-full object-contain" />
   </div>
 
-  <!-- Human row -->
-  <div v-click="3" class="grid grid-cols-[0.35fr_1fr] gap-5 items-center">
+  <!-- Human row: original -->
+  <div v-if="$clicks <= 3" v-click="3" class="grid grid-cols-[0.35fr_1fr] gap-5 items-center">
     <img src="/female-1.svg" class="w-[65%] object-contain mx-auto" />
     <img src="/human_logistic_regression_from_opponent_weights.svg" class="w-full object-contain" />
+  </div>
+
+  <!-- Mouse row: placeholder -->
+  <div v-if="$clicks >= 4" class="grid grid-cols-[0.35fr_1fr] gap-5 items-center mt-15">
+    <img src="/mouse-1.svg" class="w-[70%] object-contain mx-auto" />
+    <img src="/mouse_wsls_LR_model_weights.svg" class="w-full object-contain" />
+  </div>
+
+  <!-- Human row: placeholder -->
+  <div v-if="$clicks >= 4" class="grid grid-cols-[0.35fr_1fr] gap-5 items-center">
+    <img src="/female-1.svg" class="w-[65%] object-contain mx-auto" />
+    <img src="/human_wsls_LR_model_weights.svg" class="w-full object-contain" />
   </div>
 
   </div>
@@ -2114,10 +2275,9 @@ $$
   <div class="absolute left-[1%] bottom-[1%] w-[18%] z-0">
     <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
       <img src="/overview-cartoon.svg" class="w-full object-contain" />
-
-  <div class="absolute inset-y-0 left-27 w-38% border-2 border-blue-500 rounded-lg-l pointer-events-none"></div>
-  <div class="absolute inset-y-0 left-0 w-62% bg-white/45 pointer-events-none"></div>
-  </div>
+      <div class="absolute inset-y-0 left-27 w-38% border-2 border-blue-500 rounded-lg-l pointer-events-none"></div>
+      <div class="absolute inset-y-0 left-0 w-62% bg-white/45 pointer-events-none"></div>
+    </div>
   </div>
 
 </div>
