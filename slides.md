@@ -1781,19 +1781,36 @@ layout: default
 </div>
 
 
-<!-- Pop-up note -->
+<!-- Pop-up note 1-->
+  <div
+    v-click="1"
+    class="absolute left-[11%] bottom-[60%] w-[48%] rounded-2xl bg-yellow-100 border-2 border-yellow-300 shadow-xl p-5 rotate-[-2deg]"
+  >
+    <div class="text-lg font-bold mb-3">
+      Computer algorithms
+    </div>
+
+  <ul class="text-base leading-snug space-y-2 pl-5 list-disc">
+    <li>
+      Rational : strategy designed to maximise rewards
+    </li>
+    <li>
+      Consistent : strategy does not change over time
+    </li>
+  </ul>
+  </div>
+
+
+<!-- Pop-up note 2-->
   <div
     v-click="3"
-    class="absolute left-[10%] bottom-[19%] w-[42%] rounded-2xl bg-yellow-100 border-2 border-yellow-300 shadow-xl p-5 rotate-[-2deg]"
+    class="absolute left-[11%] bottom-[11%] w-[48%] rounded-2xl bg-yellow-100 border-2 border-yellow-300 shadow-xl p-5 rotate-[-2deg]"
   >
     <div class="text-lg font-bold mb-3">
       What can we learn / test that we can't with animal vs computer?
     </div>
 
   <ul class="text-base leading-snug space-y-2 pl-5 list-disc">
-    <li>
-      Our current computer algorithm is rational and has a strategy that does not change over time
-    </li>
     <li>
       How do animals exploit the choice statistics of a suboptimal agent? 
     </li>
@@ -1860,6 +1877,19 @@ onMounted(() => {
     </div>
   </div>
 
+  </div>
+</div>
+
+
+<!-- Transition note -->
+<div
+  v-click="1"
+  class="absolute bottom-[45%] left-1/2 -translate-x-1/2 w-[55%] text-center"
+>
+  <div class="bg-white/85 px-6 py-3 rounded-xl shadow-md">
+    <p class="text-lg font-semibold text-gray-800">
+      Does behaviour change when the opponent is another mouse?
+    </p>
   </div>
 </div>
 
@@ -2148,7 +2178,7 @@ Humans are also less random when playing against another human
 ---
 transition: fade
 layout: default
-clicks: 5
+clicks: 4
 ---
 
 <h1 class="!text-[1.4rem] !leading-tight">
@@ -2162,12 +2192,12 @@ Both humans and mice show increased adaptation to conspecific opponent
   <!-- ===================== -->
   <div class="absolute left-[0%] top-[24%] w-[40%]">
 
-  <div class="text-[0.95rem] font-semibold text-gray-700 mb-10">
+  <div v-if="$clicks >= 1 && $clicks <= 4" class="text-[0.95rem] font-semibold text-gray-700 mb-10">
     Logistic Regression Model
   </div>
 
   <!-- Equation 1: opponent history -->
-  <div v-if="$clicks <= 3" class="relative">
+  <div v-if="$clicks >= 1 && $clicks <= 3"  class="relative">
 
   $$
   P(y_t = 1) = \sigma\!\big(\beta_0 + \color{#2563eb}{\beta_1 o_{t-1} + \beta_2 o_{t-2} + \beta_3 o_{t-3}}\big)
@@ -2269,17 +2299,18 @@ Both humans and mice show increased adaptation to conspecific opponent
 
   </div>
 
-  <!-- ===================== -->
-  <!-- OVERVIEW PANEL -->
-  <!-- ===================== -->
-  <div class="absolute left-[1%] bottom-[1%] w-[18%] z-0">
-    <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
-      <img src="/overview-cartoon.svg" class="w-full object-contain" />
-      <div class="absolute inset-y-0 left-27 w-38% border-2 border-blue-500 rounded-lg-l pointer-events-none"></div>
-      <div class="absolute inset-y-0 left-0 w-62% bg-white/45 pointer-events-none"></div>
-    </div>
-  </div>
 
+</div>
+
+<!-- ===================== -->
+<!-- OVERVIEW PANEL -->
+<!-- ===================== -->
+<div class="absolute left-[1%] bottom-[1%] w-[18%] z-0">
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img src="/overview-cartoon.svg" class="w-full object-contain" />
+    <div class="absolute inset-y-0 left-27 w-37.983% border-2 border-blue-500 rounded-r-lg pointer-events-none"></div>
+    <div class="absolute inset-y-0 left-0 w-62% bg-white/45 pointer-events-none"></div>
+  </div>
 </div>
 
 
