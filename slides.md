@@ -343,7 +343,7 @@ Rock paper scissors as a way of studying strategic stochasticity
     class="absolute top-[50px] right-[2%] w-[26%] flex flex-col items-center text-center transition-all duration-700"
   >
     <div class="text-sm font-semibold leading-snug max-w-xs mb-3">
-      Fish increase path complexity after being poked
+      Elite tennis players achieve equilibrium outcomes despite slight deviations from randomness
     </div>
 
   <div class="flex flex-col items-center gap-3">
@@ -358,9 +358,9 @@ Rock paper scissors as a way of studying strategic stochasticity
   </div>
 
   <div class="text-xs leading-snug italic max-w-xs mt-3">
-    Herbert-Read et al. 2015<br>
+    Walker and Wooders 2001<br>
     <span class="not-italic">
-      Escape path complexity and its context dependency in Pacific blue-eyes
+      Minimax Play at Wimbledon
     </span>
   </div>
   </div>
@@ -544,7 +544,7 @@ clicks: 5
     </div>
     <div class="text-sm italic mt-1 ml-4 transition-all duration-500"
          :class="$clicks >= 4 ? 'opacity-90' : 'opacity-70'">
-      Aloor, Sit et al. *Strategic stochasticity in mice and monkeys* (in prep)
+      Aloor* & Sit* et al. Strategic stochasticity in mice and monkeys (in prep)
     </div>
   </div>
 
@@ -557,7 +557,7 @@ clicks: 5
       2. Can we find neural signatures of different behavioural strategies, such as differences in reward signalling?
     </div>
     <div class="text-sm italic opacity-70 mt-1 ml-4">
-      Aloor, Sit et al. *Distinct neuromodulatory contributions to strategic decisions in a competitive multi-player game* (in prep)
+      Aloor* & Sit* et al. Distinct neuromodulatory contributions to strategic decisions in a competitive multi-player game (in prep)
     </div>
   </div>
 
