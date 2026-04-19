@@ -1537,8 +1537,8 @@ Cross-species differences in strategic stochasticity
   <g
     class="transition-all duration-700 ease-in-out"
     :style="$clicks >= 3
-      ? 'transform: translate(0px, -110px) rotate(-90deg); transform-origin: 200px -80px;'
-      : 'transform: translate(0px, 0px) rotate(0deg); transform-origin: 200px -80px;'"
+      ? 'transform: translate(0px, -110px) rotate(-90deg); transform-origin: 200px -80px; opacity: 1'
+      : 'transform: translate(0px, 0px) rotate(0deg); transform-origin: 200px -80px; opacity: 0.5'"
   >
     <line
       x1="240"
@@ -1578,8 +1578,8 @@ Cross-species differences in strategic stochasticity
   <g
     class="transition-all duration-700 ease-in-out"
     :style="$clicks >= 3
-      ? 'transform: translate(5px, -110px) rotate(-90deg); transform-origin: 220px -60px;'
-      : 'transform: translate(0px, 0px) rotate(0deg); transform-origin: 220px -60px;'"
+      ? 'transform: translate(5px, -110px) rotate(-90deg); transform-origin: 220px -60px; opacity: 1'
+      : 'transform: translate(0px, 0px) rotate(0deg); transform-origin: 220px -60px;opacity: 0.5'"
   >
     <line
       x1="260"
@@ -2325,9 +2325,9 @@ clicks: 7
 
 # Animal vs Animal Matching pennies : outlook
 
-<div class="mt-6 space-y-3">
+<div class="mt-6 space-y-3 ml-45">
   <div v-click="1" class="text-lg">
-  Question: How does an individuals training history shape their <br> subsequent strategy and adpatation to their opponent?
+  How does an individuals training history shape their <br> subsequent strategy and adpatation to their opponent?
   </div>
 </div>
 
