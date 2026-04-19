@@ -2327,7 +2327,7 @@ clicks: 7
 
 <div class="mt-6 space-y-3 ml-45">
   <div v-click="1" class="text-lg">
-  How does an individuals training history shape their <br> subsequent strategy and adpatation to their opponent?
+  How does an individuals training history shape their <br> subsequent strategy and adaptation against their opponent?
   </div>
 </div>
 
