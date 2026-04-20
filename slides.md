@@ -384,7 +384,7 @@ Rock paper scissors as a way of studying strategic stochasticity
 ---
 transition: fade
 layout: two-cols-title
-clicks: 13
+clicks: 10
 ---
 
 :: title :: 
@@ -413,7 +413,7 @@ clicks: 13
 
 :: right :: 
 
-<div class="leading-tight space-y-3">
+<div class="leading-tight space-y-7">
 
   <v-click at="1">
     <div class="font-semibold">Game logic:</div>
@@ -428,30 +428,18 @@ clicks: 13
   </v-click>
 
   <v-click at="6">
-    <div class="font-semibold pt-2">Strategies:</div>
+    <div class="font-semibold pt-2">Potential strategies and game dynamics:</div>
   </v-click>
 
   <v-click at="7">
-    <div class="ml-4">• Exploit predictable opponents</div>
-  </v-click>
-
-  <v-click at="8">
-    <div class="ml-4">• Be unpredictable to avoid exploitation</div>
-  </v-click>
-
-  <v-click at="9">
-    <div class="font-semibold pt-2">Potential game dynamics:</div>
-  </v-click>
-
-  <v-click at="10">
     <div class="ml-4">• Nash equilibrium: both players randomise 50/50, with reward rate of 50%</div>
   </v-click>
 
-  <v-click at="11">
+  <v-click at="8">
     <div class="ml-4">• A player learns to exploit an opponent</div>
   </v-click>
 
-  <v-click at="12">
+  <v-click at="9">
     <div class="ml-4">• A player learns randomness under competition from a predictive opponent</div>
   </v-click>
 
@@ -459,7 +447,7 @@ clicks: 13
 
 <!-- Centered overlay: Talk overview -->
 <div
-  v-if="$clicks === 13"
+  v-if="$clicks === 10"
   class="absolute inset-0 flex items-center justify-center z-20"
 >
 
@@ -787,7 +775,7 @@ columns: is-5
   style="image-rendering: -webkit-optimize-contrast;"
 />
   <div class="text-sm">
-    Joseph Warren
+    In colloboration with <br> Joseph Warren
   </div>
 </div>
 
@@ -2117,28 +2105,21 @@ Humans are also less random when playing against another human
 
   <!-- Top image (Click 1) -->
   <img
-    v-if="$clicks === 1"
+    v-if="$clicks >= 1"
     src="/eoo9vmxk_choices_reward_and_entropy.svg"
-    class="absolute left-1/2 -translate-x-1/2 top-[0%] w-[70%] object-contain"
-  />
-
-
-  <img
-    v-click="2"
-    src="/example_human_MP_vs_MP_choices_and_highlight.svg"
-    class="absolute left-1/2 -translate-x-1/2 top-[0%] w-[70%] object-contain"
+    class="absolute left-1/2 -translate-x-1/2 top-[0%] w-[70%] -mt-5 object-contain"
   />
 
   <!-- Bottom left (Click 2) -->
   <img
-    v-click="3"
+    v-click="2"
     src="/human_solo_vs_social_entropy_line_plot.svg"
     class="absolute left-[25%] bottom-[43%] w-[25%] object-contain"
   />
 
   <!-- Bottom right (Click 3) -->
   <img
-    v-click="4"
+    v-click="3"
     src="/human_solo_vs_social_reward_line_plot.svg"
     class="absolute right-[25%] bottom-[43%] w-[25%] object-contain"
   />
@@ -2327,7 +2308,7 @@ clicks: 7
 
 <div class="mt-6 space-y-3 ml-45">
   <div v-click="1" class="text-lg">
-  How does an individuals training history shape their <br> subsequent strategy and adpatation against their opponent?
+  How does an individual's training history shape their <br> subsequent strategy and adpatation against their opponent?
   </div>
 </div>
 
