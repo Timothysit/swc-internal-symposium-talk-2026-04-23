@@ -2515,7 +2515,7 @@ transition: fade
 
 <v-clicks :every="2">
 
-<p class="text-lg font-semibold italic text-teal-600">1 | 1. What strategies do animals use in matching pennies against an opponent with a predefined strategy? How does it differ across species?</p>
+<p class="text-lg font-semibold italic text-teal-600">1 | What strategies do animals use in matching pennies against an opponent with a predefined strategy? How does it differ across species?</p>
 
 - Across species, behaviour converges toward stochastic strategies under competition
 - But they reach this behaviour in different ways; mice start with simple biased strategies, whereas humans use more sophisticated reward-guided strategies
