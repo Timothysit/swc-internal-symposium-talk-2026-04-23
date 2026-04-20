@@ -553,7 +553,7 @@ clicks: 3
       class="text-lg transition-all duration-500"
       :class="$clicks >= 3 ? 'text-black-500 font-semibold' : ''"
     >
-      1. What are the behavioural strategies used by mice in a game of matching pennies against an opponent with a stationary strategy? How does it differ in humans and monkeys?
+      1. What strategies do animals use in matching pennies against an opponent with a predefined strategy? How does it differ across species?
     </div>
     <div class="text-sm italic mt-1 ml-4 transition-all duration-500"
          :class="$clicks >= 3 ? 'opacity-90' : 'opacity-70'">
@@ -567,7 +567,7 @@ clicks: 3
 
   <div :class="$clicks >= 3 ? 'opacity-100' : ''">
     <div class="text-lg transition-all duration-500">
-      2. Do mice and humans change their strategy when playing against a conspecific, where the strategies of the opponent is no longer stationary?
+      2. How do mice and humans change their strategy when playing against a conspecific, where the strategies of the opponent are no longer fixed?
     </div>
     <div class="text-sm italic opacity-70 mt-1 ml-4">
       Ongoing project
@@ -1677,7 +1677,7 @@ clicks: 5
   <!-- Question -->
   <div v-click class="space-y-1">
     <div class="text-lg">
-    1. What behavioural strategies do mice use in matching pennies against a competitive opponent? How does this compare to humans and monkeys?
+    1. What strategies do animals use in matching pennies against an opponent with a predefined strategy? How does it differ across species?
   </div>
 
   <div class="text-sm italic text-gray-500 ml-2">
@@ -1711,7 +1711,7 @@ clicks: 5
   <!-- Question -->
   <div v-click class="space-y-1 font-semibold">
     <div class="text-lg">
-    3. So far, this has been studied against stationary opponents. What changes when the opponent is another adaptive animal?
+    3. So far, this has been studied against computer opponents. What changes when the opponent is another adaptive animal?
   </div>
   </div>
 
@@ -2327,7 +2327,7 @@ clicks: 7
 
 <div class="mt-6 space-y-3 ml-45">
   <div v-click="1" class="text-lg">
-  How does an individuals training history shape their <br> subsequent strategy and adaptation against their opponent?
+  How does an individuals training history shape their <br> subsequent strategy and adpatation against their opponent?
   </div>
 </div>
 
@@ -2466,6 +2466,21 @@ clicks: 7
 </div>
 
 
+<div v-if="$clicks == 5">
+  <img
+    src="/symmetric_matching_pennies_0.svg"
+    class="absolute left-[29%] -translate-x-1/2 top-[50%] w-[20%] object-contain"
+  />
+  <img
+    src="/symmetric_matching_pennies_0.svg"
+    class="absolute left-[49%] -translate-x-1/2 top-[50%] w-[20%] object-contain"
+  />
+  <img
+    src="/symmetric_matching_pennies_0.svg"
+    class="absolute left-[69%] -translate-x-1/2 top-[50%] w-[20%] object-contain"
+  />
+</div>
+
 ---
 layout: side-title
 color: light 
@@ -2500,13 +2515,13 @@ transition: fade
 
 <v-clicks :every="2">
 
-<p class="text-lg font-semibold italic text-teal-600">1 | What are the behavioural strategies used by mice, monkeys and humans in a game of matching pennies against a competitive opponent?</p>
+<p class="text-lg font-semibold italic text-teal-600">1 | 1. What strategies do animals use in matching pennies against an opponent with a predefined strategy? How does it differ across species?</p>
 
 - Across species, behaviour converges toward stochastic strategies under competition
 - But they reach this behaviour in different ways; mice start with simple biased strategies, whereas humans use more sophisticated reward-guided strategies
 
 
-<p class="text-lg font-semibold italic text-teal-600">2 | Do we observed a change in behaviour when switching from playing against a computer to player against a conspecific?</p>
+<p class="text-lg font-semibold italic text-teal-600">2 | How do mice and humans change their strategy when playing against a conspecific, where the strategies of the opponent are no longer fixed?</p>
 
 - Both mice and human become less random when playing against a conspecific
 - But reward rates are increased and behaviour appears to be adaptive
