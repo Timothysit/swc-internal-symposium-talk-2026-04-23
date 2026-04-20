@@ -2466,6 +2466,21 @@ clicks: 7
 </div>
 
 
+<div v-if="$clicks == 5">
+  <img
+    src="/symmetric_matching_pennies_0.svg"
+    class="absolute left-[29%] -translate-x-1/2 top-[50%] w-[20%] object-contain"
+  />
+  <img
+    src="/symmetric_matching_pennies_0.svg"
+    class="absolute left-[49%] -translate-x-1/2 top-[50%] w-[20%] object-contain"
+  />
+  <img
+    src="/symmetric_matching_pennies_0.svg"
+    class="absolute left-[69%] -translate-x-1/2 top-[50%] w-[20%] object-contain"
+  />
+</div>
+
 ---
 layout: side-title
 color: light 
