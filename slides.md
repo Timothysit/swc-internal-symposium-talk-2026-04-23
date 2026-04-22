@@ -35,7 +35,7 @@ mdc: true
 
   <!-- Title -->
   <h1 class="leading-tight !mt-0">
-    Multi-agent decision-making in mice, monkeys and humans
+    Multi-agent decision-making in mice, monkeys, and humans
   </h1>
 
   <!-- Subtitle -->
@@ -484,7 +484,7 @@ clicks: 10
   <!-- Highlighted text boxes -->
   <div class="flex justify-start items-center gap-2 mb-3 ml-1 text-[0.7rem] font-medium">
 
-  <div class="px-2.5 py-1 rounded-md border border-blue-500 bg-blue-50 text-blue-700">
+  <div class="px-2.5 py-1 rounded-md border border-green-500 bg-green-50 text-green-700">
     Scientific Questions
   </div>
 
@@ -494,16 +494,16 @@ clicks: 10
   </div>
 
 
-  <div class="px-2.5 py-1 rounded-md border border-purple-500 bg-purple-50 text-purple-700">
+  <div class="px-2.5 py-1 rounded-md border border-green-500 bg-green-50 text-green-700">
     Analysis
   </div>
 
 
-  <div class="px-2.5 py-1 rounded-md border border-red-500 bg-red-50 text-red-700">
+  <div class="px-2.5 py-1 rounded-md border border-green-500 bg-green-50 text-green-700">
     Results
   </div>
 
-</div>
+  </div>
 
   </div>
 </div>
@@ -520,12 +520,19 @@ clicks: 3
 
 
 <!-- Left: overview cartoon -->
+
+
+
 <div class="relative w-full">
+
+
   <div class="rounded-xl border border-gray-300 bg-white p-3 shadow-sm relative overflow-hidden">
-    <img
-      src="/overview-cartoon.svg"
-      class="w-full object-contain"
-    />
+
+  <img
+    src="/overview-cartoon.svg"
+    class="w-full object-contain"
+  /> 
+   
 
   <!-- Highlight left half for question 1 -->
   <div
@@ -563,6 +570,30 @@ clicks: 3
     class="absolute inset-y-0 right-0 w-37% bg-white/55 pointer-events-none"
   ></div>
 
+
+
+</div>
+
+<!-- Highlighted text boxes INSIDE -->
+<div class="absolute top-95 left-10 flex gap-1.5 text-[0.5rem] font-medium z-20">
+
+  <!-- Questions (highlighted) -->
+  <div class="px-2.5 py-1 rounded-md border border-green-600 bg-green-100 text-green-800 shadow-md scale-105">
+    Questions
+  </div>
+
+  <!-- Others (faded) -->
+  <div class="px-2.5 py-1 rounded-md border border-green-500 bg-green-50 text-green-700 opacity-40">
+    Experiments
+  </div>
+
+  <div class="px-2.5 py-1 rounded-md border border-green-500 bg-green-50 text-green-700 opacity-40">
+    Analysis
+  </div>
+
+  <div class="px-2.5 py-1 rounded-md border border-green-500 bg-green-50 text-green-700 opacity-40">
+    Results
+  </div>
 
 </div>
 
@@ -639,7 +670,7 @@ layout: default
   </li>
 
   <li v-click="4">
-    Algorithm 2: chooses based on stored choice and reward history <br> (sequences of length 1 - 4)
+    Algorithm 2: chooses based on stored choice and reward history 
   </li>
 
   </ul>
@@ -679,7 +710,7 @@ layout: default
 <!-- Human justification -->
 <div
   v-if="$clicks >= 7"
-  class="absolute left-[15%] top-[50%] -translate-y-1/2 w-[35%]"
+  class="absolute left-[15%] top-[50%] -translate-y-1/2 w-[35%] z-10"
 >
   <div class="px-4 py-3 rounded-lg bg-white/70 backdrop-blur-md shadow-md">
     <div class="text-base font-semibold mb-2">
@@ -700,7 +731,7 @@ layout: default
 <!-- Daeyeol Lee headshot + citation -->
 <div
   v-if="$clicks >= 1 && $clicks < 5"
-  class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+  class="absolute bottom-10 left-55% -translate-x-1/2 flex flex-col items-center"
 >
 <!-- Circular image -->
 <img
@@ -717,7 +748,7 @@ layout: default
 
 <!-- Bottom-left overview panel -->
 <div
-  class="absolute left-[3%] bottom-[3%] w-[18%]"
+  class="absolute left-[3%] bottom-[3%] w-[22%] z-0"
 >
   <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
     <img
@@ -764,6 +795,30 @@ layout: default
   </div>
 </div>
 
+<!-- Highlighted text boxes INSIDE -->
+<div class="absolute top-107 left-8 flex gap-1.5 text-[0.5rem] font-medium z-5">
+
+  <!-- Questions (highlighted) -->
+  <div class="px-1.25 py-1 rounded-md border border-green-600 bg-green-100 text-green-800 shadow-md opacity-40">
+    Questions
+  </div>
+
+  <!-- Others (faded) -->
+  <div class="px-1.25 py-1 rounded-md border border-green-500 bg-green-50 text-green-700 scale-105"">
+    Experiments
+  </div>
+
+  <div class="px-1.25 py-1 rounded-md border border-green-500 bg-green-50 text-green-700 opacity-40">
+    Analysis
+  </div>
+
+  <div class="px-1.25 py-1 rounded-md border border-green-500 bg-green-50 text-green-700 opacity-40">
+    Results
+  </div>
+
+</div>
+
+
 
 
 
@@ -801,21 +856,35 @@ clicks: 3
 <img v-if="$clicks === 3" src="/glm-hmm-synthetic-check-slide-2.svg" class="opacity-100 w-[100%]"/>
 
 
-<!-- Joseph Warren acknowledgement -->
+<!-- Joanna Joseph Warren acknowledgement -->
 <div 
   v-click="1"
-  class="absolute bottom-45 left-30 flex items-center gap-3"
+  class="absolute bottom-45 left-30 flex items-center gap-4"
 >
-<img
-  src="/jo-head-v2.jpeg"
-  class="w-12 h-12 rounded-full object-cover border border-gray-300 shrink-0"
-  style="image-rendering: -webkit-optimize-contrast;"
-/>
-  <div class="text-sm">
-    In colloboration with <br> Joseph Warren
-  </div>
-</div>
 
+  <!-- Joanna -->
+  <div class="flex flex-col items-center gap-1">
+    <img
+      src="/joanna-head.png"
+      class="w-12 h-12 rounded-full object-cover border border-gray-300"
+    />
+    <div class="text-sm text-center">
+      Joanna Aloor
+    </div>
+  </div>
+
+  <!-- Jo Warren (lower) -->
+  <div class="flex flex-col items-center gap-1 mt-5">
+    <img
+      src="/jo-head-v2.jpeg"
+      class="w-12 h-12 rounded-full object-cover border border-gray-300"
+    />
+    <div class="text-sm text-center">
+      In collaboration with <br> Jo Warren
+    </div>
+  </div>
+
+</div>
 
 
 <div v-click="1" class="absolute bottom-10 left-12 w-[36%] text-sm opacity-75 leading-snug">
@@ -829,6 +898,45 @@ clicks: 3
     <i> Bolkan  et al. 2022. </i> Opponent control of behaviour by dorsomedial striatal pathways depends on task demands and internal state. <i>Nature Neuroscience </i>
   </div>
 </div>
+
+
+
+<!-- Bottom-left overview panel -->
+<div
+  class="absolute right-[3%] bottom-[3%] w-[22%] z-0"
+>
+  <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
+    <img
+      src="/overview-cartoon.svg"
+      class="w-full object-contain"
+    />
+
+  </div>
+</div>
+
+<!-- Highlighted text boxes INSIDE -->
+<div class="absolute top-107 right-8 flex gap-1.21 text-[0.5rem] font-medium z-5">
+
+  <!-- Questions (highlighted) -->
+  <div class="px-1.25 py-1 rounded-md border border-green-600 bg-green-100 text-green-800 shadow-md opacity-40">
+    Questions
+  </div>
+
+  <!-- Others (faded) -->
+  <div class="px-1.25 py-1 rounded-md border border-green-500 bg-green-50 text-green-700 opacity-40">
+    Experiments
+  </div>
+
+  <div class="px-1.25 py-1 rounded-md border border-green-500 bg-green-50 text-green-700 scale-105">
+    Analysis
+  </div>
+
+  <div class="px-1.25 py-1 rounded-md border border-green-500 bg-green-50 text-green-700 opacity-40">
+    Results
+  </div>
+
+</div>
+
 
 
 ---
@@ -952,7 +1060,7 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
   <!-- Win-stay -->
   <line
     x1="40%" y1="85%"
-    x2="43%" y2="79%"
+    x2="43%" y2="76.5%"
     stroke="black"
     stroke-width="2"
     marker-end="url(#arrowhead)"
@@ -962,8 +1070,8 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
 
   <!-- Lose-switch -->
   <line
-    x1="55%" y1="50%"
-    x2="49%" y2="54%"
+    x1="55%" y1="47%"
+    x2="49.2%" y2="52%"
     stroke="black"
     stroke-width="2"
     marker-end="url(#arrowhead)"
@@ -981,7 +1089,7 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
   </div>
 
   <div
-    class="absolute left-[60.5%] -translate-x-1/2 top-[48%] text-[1.1rem] font-semibold label-pop"
+    class="absolute left-[60.5%] -translate-x-1/2 top-[44.5%] text-[1.1rem] font-semibold label-pop"
     style="animation-delay: 1.0s;"
   >
     Lose-switch
@@ -1048,7 +1156,7 @@ Monkeys adapt their strategy to the competitive pressure from their opponent
 
 <!-- Bottom-left overview panel -->
 <div
-  class="absolute left-[1%] bottom-[2%] w-[14%] z-0"
+  class="absolute left-[1%] bottom-[2%] w-[15%] z-0"
 >
   <div class="rounded-xl border border-gray-300 bg-white p-2 shadow-sm relative overflow-hidden">
     <img
@@ -1151,11 +1259,11 @@ clicks: 6
 
   <!-- Learning summary -->
   <img
-    src="/average_pstate_smooth_cosyneabstract2025.svg"
-    class="absolute left-[47%] -translate-x-1/2 transition-all duration-700 ease-in-out"
+    src="/average_pstate.svg"
+    class="absolute left-[49%] -translate-x-1/2 transition-all duration-700 ease-in-out"
     :style="$clicks < 5
       ? 'top: 50%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : 'top: 30%; width: 50%; opacity: 1; transform: translateX(-50%) scale(1);'"
+      : 'top: 30%; width: 55%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
 
   </div>
@@ -1207,6 +1315,15 @@ clicks: 6
 
 </div>
 
+<!-- Bottom-right acknowledgment -->
+<div
+  class="absolute right-[7%] bottom-[7%] flex items-center gap-2 z-10"
+>
+  <div class="text-[1rem] text-gray-600">
+    Joanna Aloor
+  </div>
+</div>
+
 
 
 
@@ -1227,6 +1344,8 @@ clicks: 14
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out -mt-10"
     :style="$clicks <= 1
       ? 'top: 90px; width: 34%; opacity: 1; transform: translateX(-50%) scale(1);'
+      : $clicks <= 6
+      ? 'top: 5%; width: 26%; opacity: 0.2; transform: translateX(-50%) scale(1);'
       : $clicks <= 7
       ? 'top: 5%; width: 26%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 90px; width: 26%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
@@ -1550,18 +1669,18 @@ clicks: 14
   <!-- Per-session summary: replacement on click 7 -->
   <img
     src="/human_pstochastic_over_session.svg"
-    class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
+    class="absolute left-[55%] -translate-x-1/2 transition-all duration-700 ease-in-out"
     :style="$clicks === 12
-      ? 'top: 25%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
+      ? 'top: 25%; width: 90%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 25%; width: 80%; opacity: 0; pointer-events: none;'"
   />
 
   <!-- Per-session summary: replacement on click 8 -->
   <img
     src="/human_pstochastic_over_session_3.svg"
-    class="absolute left-1/2 -translate-x-1/2"
+    class="absolute left-[55%]  -translate-x-1/2"
     :style="$clicks >= 13
-      ? 'top: 25%; width: 80%; opacity: 1;'
+      ? 'top: 25%; width: 90%; opacity: 1;'
       : 'top: 25%; width: 80%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
 
@@ -1604,7 +1723,7 @@ clicks: 14
     <span class="italic">Question:</span> Will humans eventually learn more stochastic strategies if given more time?
     </li>
     <li>
-      How random are mice, monkeys and humans? 
+      How random are mice, monkeys, and humans? 
     </li>
   </ul>
 </div>
@@ -1633,6 +1752,17 @@ clicks: 14
   </div>
 
 </div>
+
+
+<!-- Bottom-right acknowledgment -->
+<div
+  class="absolute right-[7%] bottom-[7%] flex items-center gap-2 z-10"
+>
+  <div class="text-[1rem] text-gray-600">
+    With Julia Nicklaus
+  </div>
+</div>
+
 
 
 
@@ -1983,8 +2113,8 @@ clicks: 5
   </div>
 
   <div class="text-sm italic text-gray-500 ml-2">
-    Aloor, Sit et al. Cortical Mechanisms ... <span class="italic">(in prep)</span> <br>
-    Aloor, Sit et al. Distinct neuromodulatory contributions to strategic decisions in a competitive multi-player game<span class="italic">(in prep)</span>
+    Widefield: Aloor, Sit et al. Strategic stochasticity in mice and monkeys  <span class="italic">(in prep)</span> <br>
+    Photometry: Aloor, Sit et al. Distinct neuromodulatory contributions to strategic decisions in a competitive multi-player game<span class="italic">(in prep)</span>
   </div>
   </div>
 
@@ -2132,9 +2262,9 @@ onMounted(() => {
 </script>
 
 <!-- Acknowledgement (bottom-left) -->
-<div class="absolute bottom-6 left-85">
+<div class="absolute bottom-6 left-57">
   <div class="bg-white px-4 py-2 rounded-lg shadow-md flex items-center gap-6">
-
+  In colloboration with 
   <!-- Mehul -->
   <div class="flex items-center gap-2">
     <img
@@ -2758,7 +2888,7 @@ transition: fade
   <h2> Part II </h2>
 
   <img
-    src="/mouse-human-entropy-reward-beta-summary.svg"
+    src="/mouse-human-entropy-reward-beta-summary-v2.svg"
     class="w-[100%] object-contain -mt-3"
   />
 
