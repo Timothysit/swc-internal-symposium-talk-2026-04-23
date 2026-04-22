@@ -1213,7 +1213,7 @@ clicks: 6
 ---
 transition: fade
 layout: default
-clicks: 10
+clicks: 14
 ---
 
 # Humans alternate between win-stay and win-switch states
@@ -1227,7 +1227,7 @@ clicks: 10
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out -mt-10"
     :style="$clicks <= 1
       ? 'top: 90px; width: 34%; opacity: 1; transform: translateX(-50%) scale(1);'
-      : $clicks <= 3
+      : $clicks <= 7
       ? 'top: 5%; width: 26%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 90px; width: 26%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
@@ -1257,11 +1257,11 @@ clicks: 10
     class="absolute left-[48%] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-700 ease-in-out"
     :style="$clicks < 2
       ? 'top: 35%; width: 58%; height: 180px; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : $clicks === 2
+      : $clicks >= 2 && $clicks <= 6
       ? 'top: 15%; width: 38%; height: 50%; opacity: 1; transform: translateX(-50%) scale(1);'
-      : $clicks === 3
+      : $clicks === 7
       ? 'top: 18%; width: 58%; height: 260px; opacity: 1; transform: translateX(-50%) scale(1);'
-      : $clicks === 4
+      : $clicks === 8
       ? 'top: 40px; width: 58%; height: 260px; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 58%; height: 260px; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   >
@@ -1270,25 +1270,257 @@ clicks: 10
       class="absolute transition-all duration-700 ease-in-out"
       :style="$clicks < 2
         ? 'max-width: none; width: 360%; left: -115%; top: 0%;'
-        : $clicks === 2
+        : $clicks >= 2 && $clicks <= 6
         ? 'max-width: none; width: 360%; left: -115%; top: 0%;'
-        : $clicks === 3
-        ? 'max-width: none; width: 100%; left: 0%; top: 0%;'
-        : $clicks === 4
-        ? 'max-width: none; width: 100%; left: 0%; top: 0%;'
         : 'max-width: none; width: 100%; left: 0%; top: 0%;'"
     />
   </div>
+
+<!-- ========================= -->
+<!-- NEW ORANGE ARROWS: 3 -> 4 -->
+<!-- ========================= -->
+<div
+  class="absolute left-[26%] top-[22%] w-[42%] h-[30%] z-30 pointer-events-none transition-all duration-700 ease-in-out"
+  :style="$clicks < 3 || $clicks > 4
+    ? 'opacity: 0;'
+    : $clicks === 3
+    ? 'opacity: 1; transform: translateX(0px);'
+    : 'opacity: 1; transform: translateX(7px);'"
+>
+  <svg class="w-full h-full overflow-visible" viewBox="0 0 700 400">
+    <defs>
+      <marker
+        id="arrowhead-orange"
+        markerWidth="8"
+        markerHeight="8"
+        refX="4"
+        refY="4"
+        orient="auto"
+        markerUnits="strokeWidth"
+      >
+        <path d="M0,0 L8,4 L0,8 z" fill="#f59e0b" />
+      </marker>
+    </defs>
+
+  <!-- ===================== -->
+  <!-- TOP → BOTTOM (3 arrows) -->
+  <!-- ===================== -->
+  <g transform="translate(-56, -280)">
+  <path
+    d="M120,80 C120,120 120,160 120,200"
+    fill="none"
+    stroke="#f59e0b"
+    stroke-width="7"
+    stroke-linecap="round"
+    marker-end="url(#arrowhead-orange)"
+  />
+  </g>
+  <g transform="translate(97, -280)">
+  <path
+    d="M120,80 C120,120 120,160 120,200"
+    fill="none"
+    stroke="#f59e0b"
+    stroke-width="7"
+    stroke-linecap="round"
+    marker-end="url(#arrowhead-orange)"
+  />
+  </g>
+  <g transform="translate(205, -280)">
+  <path
+    d="M120,80 C120,120 120,160 120,200"
+    fill="none"
+    stroke="#f59e0b"
+    stroke-width="7"
+    stroke-linecap="round"
+    marker-end="url(#arrowhead-orange)"
+  />
+  </g>
+
+  <!-- ===================== -->
+  <!-- BOTTOM → TOP (3 arrows) -->
+  <!-- ===================== -->
+  <g transform="translate(-32, 395)">
+  <path
+    d="M120,200 C120,160 120,120 120,80"
+    fill="none"
+    stroke="#f59e0b"
+    stroke-width="7"
+    stroke-linecap="round"
+    marker-end="url(#arrowhead-orange)"
+  />
+  </g>
+  <g transform="translate(77, 395)">
+  <path
+    d="M120,200 C120,160 120,120 120,80"
+    fill="none"
+    stroke="#f59e0b"
+    stroke-width="7"
+    stroke-linecap="round"
+    marker-end="url(#arrowhead-orange)"
+  />
+  </g>
+  <g transform="translate(185, 395)">
+  <path
+    d="M120,200 C120,160 120,120 120,80"
+    fill="none"
+    stroke="#f59e0b"
+    stroke-width="7"
+    stroke-linecap="round"
+    marker-end="url(#arrowhead-orange)"
+  />
+  </g>
+
+  </svg>
+</div>
+
+<!-- ========================= -->
+<!-- NEW PURPLE ARROWS: 5 -> 6 -->
+<!-- ========================= -->
+<div
+  class="absolute left-[24%] top-[22%] w-[48%] h-[30%] z-30 pointer-events-none"
+  :style="$clicks < 5 || $clicks > 6
+    ? 'opacity: 0;'
+    : 'opacity: 1;'"
+>
+  <svg class="w-full h-full overflow-visible" viewBox="0 0 760 360">
+    <defs>
+      <marker
+        id="arrowhead-purple"
+        markerWidth="8"
+        markerHeight="8"
+        refX="4"
+        refY="4"
+        orient="auto"
+        markerUnits="strokeWidth"
+      >
+        <path d="M0,0 L8,4 L0,8 z" fill="#7c3aed" />
+      </marker>
+    </defs>
+
+  <!-- ===================== -->
+  <!-- TOP → BOTTOM (3 arrows) -->
+  <!-- ===================== -->
+
+  <!-- arrow 1 -->
+  <g
+    class="transition-all duration-700 ease-in-out"
+    :style="$clicks < 6
+      ? 'transform: translate(273px, -290px); transform-origin: 120px 140px;'
+      : 'transform: translate(283px, 360px) rotate(180deg); transform-origin: 120px 140px;'"
+  >
+    <path
+      d="M120,80 C120,120 120,160 120,200"
+      fill="none"
+      stroke="#7c3aed"
+      stroke-width="7"
+      stroke-linecap="round"
+      marker-end="url(#arrowhead-purple)"
+    />
+  </g>
+
+  <!-- arrow 2 -->
+  <g
+    class="transition-all duration-700 ease-in-out"
+    :style="$clicks < 6
+      ? 'transform: translate(335px, -290px); transform-origin: 120px 140px;'
+      : 'transform: translate(345px, 360px) rotate(180deg); transform-origin: 120px 140px;'"
+  >
+    <path
+      d="M120,80 C120,120 120,160 120,200"
+      fill="none"
+      stroke="#7c3aed"
+      stroke-width="7"
+      stroke-linecap="round"
+      marker-end="url(#arrowhead-purple)"
+    />
+  </g>
+
+  <!-- arrow 3 -->
+  <g
+    class="transition-all duration-700 ease-in-out"
+    :style="$clicks < 6
+      ? 'transform: translate(417px, -290px); transform-origin: 120px 140px;'
+      : 'transform: translate(427px, 360px) rotate(180deg); transform-origin: 120px 140px;'"
+  >
+    <path
+      d="M120,80 C120,120 120,160 120,200"
+      fill="none"
+      stroke="#7c3aed"
+      stroke-width="7"
+      stroke-linecap="round"
+      marker-end="url(#arrowhead-purple)"
+    />
+  </g>
+
+
+  <!-- ===================== -->
+  <!-- BOTTOM → TOP (3 arrows) -->
+  <!-- ===================== -->
+
+  <!-- arrow 4 -->
+  <g
+    class="transition-all duration-700 ease-in-out"
+:style="$clicks < 6
+  ? 'transform: translate(283px, 362px); transform-origin: 120px 140px;'
+  : 'transform: translate(293px, -290px) rotate(180deg); transform-origin: 120px 140px;'"
+  >
+    <path
+      d="M120,200 C120,160 120,120 120,80"
+      fill="none"
+      stroke="#7c3aed"
+      stroke-width="7"
+      stroke-linecap="round"
+      marker-end="url(#arrowhead-purple)"
+    />
+  </g>
+
+  <!-- arrow 5 -->
+  <g
+    class="transition-all duration-700 ease-in-out"
+:style="$clicks < 6
+  ? 'transform: translate(346px, 362px); transform-origin: 120px 140px;'
+  : 'transform: translate(356px, -290px) rotate(180deg); transform-origin: 120px 140px;'"
+  >
+    <path
+      d="M120,200 C120,160 120,120 120,80"
+      fill="none"
+      stroke="#7c3aed"
+      stroke-width="7"
+      stroke-linecap="round"
+      marker-end="url(#arrowhead-purple)"
+    />
+  </g>
+
+  <!-- arrow 6 -->
+  <g
+    class="transition-all duration-700 ease-in-out"
+:style="$clicks < 6
+  ? 'transform: translate(408px, 362px); transform-origin: 120px 140px;'
+  : 'transform: translate(418px, -290px) rotate(180deg); transform-origin: 120px 140px;'"
+  >
+    <path
+      d="M120,200 C120,160 120,120 120,80"
+      fill="none"
+      stroke="#7c3aed"
+      stroke-width="7"
+      stroke-linecap="round"
+      marker-end="url(#arrowhead-purple)"
+    />
+  </g>
+
+
+  </svg>
+</div>
 
   <!-- Reward rate over time -->
   <img
     src="/humans_reward_rate_over_time.svg"
     class="absolute left-[44%] -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 3
+    :style="$clicks < 7
       ? 'top: 55%; width: 50%; opacity: 0; transform: translateX(-50%) translateY(10px) scale(0.96); pointer-events: none;'
-      : $clicks === 3
+      : $clicks === 7
       ? 'top: 35%; width: 68%; opacity: 1; transform: translateX(-50%) translateY(0px) scale(1);'
-      : $clicks === 4
+      : $clicks === 8
       ? 'top: 65%; width: 44%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 65%; width: 44%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
@@ -1297,9 +1529,9 @@ clicks: 10
   <img
     src="/human_solo_mp_states.svg"
     class="absolute left-[47%] -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 4
+    :style="$clicks < 8
       ? 'top: 26%; width: 60%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : $clicks === 4
+      : $clicks === 8
       ? 'top: 22%; width: 60%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 0%; width: 44%; opacity: 1; transform: translateX(-50%) scale(1);'"
   />
@@ -1308,9 +1540,9 @@ clicks: 10
   <img
     src="/human_pstate_over_session.svg"
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks < 5
+    :style="$clicks < 9
       ? 'top: 25%; width: 80%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'
-      : $clicks <= 7
+      : $clicks <= 11
       ? 'top: 25%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 25%; width: 80%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
@@ -1319,7 +1551,7 @@ clicks: 10
   <img
     src="/human_pstochastic_over_session.svg"
     class="absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out"
-    :style="$clicks === 8
+    :style="$clicks === 12
       ? 'top: 25%; width: 80%; opacity: 1; transform: translateX(-50%) scale(1);'
       : 'top: 25%; width: 80%; opacity: 0; pointer-events: none;'"
   />
@@ -1328,7 +1560,7 @@ clicks: 10
   <img
     src="/human_pstochastic_over_session_3.svg"
     class="absolute left-1/2 -translate-x-1/2"
-    :style="$clicks >= 9
+    :style="$clicks >= 13
       ? 'top: 25%; width: 80%; opacity: 1;'
       : 'top: 25%; width: 80%; opacity: 0; transform: translateX(-50%) scale(0.96); pointer-events: none;'"
   />
@@ -1336,11 +1568,11 @@ clicks: 10
   <!-- Highlight early and late session -->
   <div
     class="absolute top-[26%] h-[21%] w-[32%] bg-black/12 transition-all duration-700 ease-in-out pointer-events-none"
-    :style="$clicks < 6
+    :style="$clicks < 10
       ? 'left: 23.5%; opacity: 0; transform: scaleX(0); transform-origin: left;'
-      : $clicks === 6
+      : $clicks === 10
       ? 'left: 23.5%; opacity: 0.4; transform: scaleX(1); transform-origin: left;'
-      : $clicks === 7
+      : $clicks === 11
       ? 'left: 54%; opacity: 0.4; transform: scaleX(1); transform-origin: left;'
       : 'opacity: 0; transform: scaleX(0.96); pointer-events: none;'"
   ></div>
@@ -1351,7 +1583,7 @@ clicks: 10
 
 <!-- Conclusion note -->
 <div
-  v-click="10"
+  v-click="14"
   class="absolute left-[35%] bottom-[30%] max-w-[32%]
          bg-purple-100 border border-purple-300
          rounded-xl px-5 py-4 shadow-md
@@ -1372,7 +1604,7 @@ clicks: 10
     <span class="italic">Question:</span> Will humans eventually learn more stochastic strategies if given more time?
     </li>
     <li>
-      How random are humans compare to mice and monkeys?
+      How random are mice, monkeys and humans? 
     </li>
   </ul>
 </div>
