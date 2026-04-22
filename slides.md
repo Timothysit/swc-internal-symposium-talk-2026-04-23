@@ -1831,7 +1831,7 @@ Cross-species differences in strategic stochasticity
     class="flex flex-col items-center text-center"
   >
     <div class="text-lg font-semibold leading-snug mb-4">
-      Humans also show higher entropy during stochastic state
+      Humans also show higher entropy than mice
     </div>
     <img
       src="/segment_length_vs_entropy_zoomed_in_w_human.svg"
