@@ -2902,15 +2902,18 @@ transition: fade
 
 <p class="text-lg font-semibold italic text-teal-600">1 | What strategies do animals use in matching pennies against an opponent with a predefined strategy? How does it differ across species?</p>
 
-- Across species, behaviour converges toward adaptive randomness under competition
-- But they reach this behaviour in different ways; mice start with simple biased strategies, whereas humans use more sophisticated reward-guided strategies
+<ul class="pl-6 list-disc">
+  <li>Across species, behaviour converges toward adaptive randomness under competition</li>
+  <li>But they reach this behaviour in different ways; mice start with simple biased strategies, whereas humans use more sophisticated reward-guided strategies</li>
+</ul>
 
 
 <p class="text-lg font-semibold italic text-teal-600">2 | How do mice and humans change their strategy when playing against a conspecific, where the strategies of the opponent are no longer fixed?</p>
 
-- Both mice and human become less random when playing against a conspecific
-- But reward rates are increased and behaviour appears to be adaptive
-
+<ul class="pl-6 list-disc">
+  <li>Both mice and human become less random when playing against a conspecific</li>
+  <li>But reward rates are increased and behaviour appears to be adaptive</li>
+</ul>
 
 </v-clicks>
 
