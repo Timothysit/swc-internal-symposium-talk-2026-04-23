@@ -2264,7 +2264,7 @@ onMounted(() => {
 <!-- Acknowledgement (bottom-left) -->
 <div class="absolute bottom-6 left-57">
   <div class="bg-white px-4 py-2 rounded-lg shadow-md flex items-center gap-6">
-  In colloboration with 
+  In collaboration with 
   <!-- Mehul -->
   <div class="flex items-center gap-2">
     <img
