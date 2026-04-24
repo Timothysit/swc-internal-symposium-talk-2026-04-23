@@ -9,3 +9,7 @@ To start the slide show:
 Edit the [slides.md](./slides.md) to see the changes.
 
 Learn more about Slidev at the [documentation](https://sli.dev/).
+
+History:
+
+ - 2026-04-23 Done with presentation!
